@@ -8,6 +8,33 @@
 </head>
 <body>
 
+    <H2>Por favor, preencher os 
+        campos abaixo.
+    </H2>
+
+    <form>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="Seu nome aqui:"
+       required maxlength="45" minlength="8"> 
+
+        <label for="email"> Email:</label>
+        <input type="email" name="email" id="email" placeholder="ex: aluno@gmail.com"
+        required>
+
+        <label for="password">Senha:</label>
+        <input type="password" name="password" id="password" required
+        minlength="6">
+
+        <label for="localizacao">Localização (CEP ou endereço):</label>
+        <input type="text" id="localizacao" name="localizacao" placeholder="Digite seu CEP ou endereço">
+    </form>
+    <div id="botoes">
+        <input type="button" value="Enviar">
+        <input type="reset" value="Limpar">
+    </div>
+
+    <img src="{{ url_for('static', filename='img/LOGO.png') }}" alt="logo do site">
+    
     <script src="{{ url_for('static', filename='js/cadastrojs') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
