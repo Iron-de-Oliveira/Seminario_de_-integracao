@@ -4,7 +4,51 @@
     box-sizing: 0;
 }
 
-div[id="pai"]{
+  /*  */ /*  */
+ /* classes */
+/*  */ /*  */
+
+/* fonts google class */
+.jura {
+  font-family: "Jura", sans-serif;
+}
+
+.open-sans{
+    font-family: "Open sans", sans-serif;
+}
+
+.menu{
+    font-size: 35px;
+}
+
+.distanica-pequisar{
+    position: relative;
+    font-size: 25px;
+    margin-top: 5px;
+
+}
+
+/* cores letras class */
+.cor1{
+    color:00DDFF;
+}
+
+.cor2{
+    color:FF454E;
+}
+
+/*icones */
+
+.menu{
+    height: 35px;
+    width: 35px;
+}
+
+  /*  */ /*  */
+ /* classes */
+/*  */ /*  */
+
+div[id="display"]{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -20,16 +64,53 @@ body{
     background-color: black;
 }
 
+
+/* estilização do main */
 main{
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
     background-color: white;
 
     margin: 7 0 0 0;
-    box-shadow: 0px 4px 4px black 25%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     width: 370px;
-    height: 129;
+    height: 129px;
+}
+
+main div[id="logo"]{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 9px 0;   
+}
+
+main div[id="nav"]{
+    display: flex;
+    justify-content: center;
+    gap:9px;
+}
+
+
+main div[id="fantasma"]{
+    display: flex;
+    width: 293px;
+    height: 35px;
+    border-radius: 20px;
+    border: solid black 1px;
+    padding: 0 0 0 5px;
+}
+
+main input[id="campo-pesquisa"]{
+    width: 293px;
+    height: 35px;
+    border-radius: 20px;
+    padding: 0 0 0 5px;
+    outline: none;
+    border: 0;
+}
+main img[id="menu"]:hover{
+    cursor: pointer;
 }
 
 main img{
@@ -38,19 +119,18 @@ main img{
     height: 67px;
 }
 
-div[id="pesquisa"]{
-    width: 293px;
-    height: 35px;
-}
-
+/* estilização do nav */
 nav{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
+
     width: 370px;
     height: 80px;
     background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
     margin: 12 0 0 0;
 }
 
@@ -61,6 +141,10 @@ nav input{
     border: solid black 1px;
     background: 0;
     font-size: 17px;
+}
+
+nav input:hover{
+    cursor: pointer;
 }
 
 nav div[id="botao_user"]{
@@ -74,9 +158,34 @@ nav div[id="botao_user"]{
     background: 0;
 }
 
+nav div[id="botao_user"]:hover{
+    cursor: pointer;
+}
+
+nav img{
+    height: 50px;
+    width: 50px;
+}
+
+
+/* estilização do section */
 section{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+
     width: 370px;
     height: 255px;
     background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 14 0 0 0;
+}
+
+section img{
+    width: 202px;
+    height: 255px
 }
