@@ -2,13 +2,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title> <!-- Título da aba do navegador -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_cadastro.css') }}">
+    <link rel="stylesheet" href="../static/css/login_cadastro.css">
+
+    
 </head>
 <body>
+    <div id="pai"> <!-- Container principal da página -->
 
+        <p class="open-sans">Seja Bem Vindo!</p>  <!-- Mensagem de boas-vindas com fonte personalizada -->
+
+        <!-- Início do formulário de login -->
+        <form class="Jura">
+
+            <!-- Campo de entrada para o e-mail -->
+            <label for="email"> Email:</label>
+            <input type="email" name="email" id="email" placeholder="ex: aluno@gmail.com"
+            required>
+
+            <!-- Campo de entrada para a senha -->
+            <label for="password">Senha:</label>
+            <input type="password" name="password" id="password" placeholder="ex: aluno123"  required
+            minlength="6">
+            </form>
+
+            <!-- Área dos botões -->
+            <div id="botoes">
+                <input type="button" value="Login">  <!-- Botão para enviar o formulário (login) -->
+                <input type="reset" value="Cadastro">  <!-- Botão para ir para a página de cadastro -->
+            </div>
+
+             <!-- LOGO -->
+        <img src="../static/img/LOGO.png" alt="Logo TechSolidário"width="200">
+
+    </div>
+
+             <!-- Importa o JS personalizado da página, se estiver usando Flask -->
     <script src="{{ url_for('static', filename='js/login_cadastro.js') }}"></script>
+    
+    <!-- Script do Bootstrap para funcionalidades como modais e dropdowns -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>
