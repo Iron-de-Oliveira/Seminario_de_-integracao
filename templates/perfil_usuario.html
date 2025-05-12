@@ -1,19 +1,75 @@
 <html lang="pt br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perfil do Usuário</title>
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- fonts do google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/perfil_usuario.css') }}">
     <link rel="stylesheet" href="/static/css/perfil_usuario.css">
+
 </head>
 <body>
-    <script src="{{ url_for('static', filename='js/perfil_usuario.css) }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <div id="pai">
+  <div class="container">
+    <div class="profile-header">
+      <div class="top-icons">
+        <img src="https://img.icons8.com/m_outlined/512/FFFFFF/home--v2.png" class="icon" alt="Home" />
+        <span class="ajuda">Ajuda <span class="ajuda-icon">?</span></span>
+      </div>
+      <div class="user-info">
+        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/7725022-perfil-icone-ui-icon-vetor.jpg" class="profile-pic" alt="Foto do Perfil" />
+        <div>
+          <p class="user-name">Nome do Usuário</p>
+          <p class="user-email">Email do Usuário</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-card">
+      <p class="valido">✔ Válido</p>
+      <label>Nome</label>
+      <input type="text">
+      <button>Alterar</button>
+    </div>
+
+    <div class="input-card">
+      <p class="valido">✔ Válido</p>
+      <label>Email</label>
+      <input type="email">
+      <button>Alterar</button>
+    </div>
+
+    <div class="input-card">
+      <p class="valido">✔ Válido</p>
+      <label>Senha</label>
+      <input type="password">
+      <button>Alterar</button>
+    </div>
+
+    <div class="input-card">
+      <p class="valido">✔ Válido</p>
+      <label>Endereço</label>
+      <input type="text">
+      <button>Alterar</button>
+    </div>
+    </div>
+    
+  </div>
+  <script src="{{ url_for('static', filename='js/perfil_usuario.css) }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
 </body>
+   
 </html>
