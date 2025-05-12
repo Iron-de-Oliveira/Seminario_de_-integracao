@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-color: gainsboro;
+}
+
+div[id="display"]{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 412px;
+    height: 902px;
+    margin: 10 0 10 0;
+    background:linear-gradient(rgb(46, 178, 45), rgb(60, 230, 60));
+}
+
+div [id="campo_add_foto"]{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+    width: 350px;
+    height: 260px;
+    box-shadow: 0px 2px 4px black;
+    background-color: white;
+    margin: 33px 0 13px 0 ;
+    font-size: 20px;
+    text-align: center;
+}
+
+div[id="add_foto"]{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 350px;
+    height: 150px;
+    background-color: rgb(255, 255, 255);
+    gap:6px;
+}
+
+input[id="pass_left"]{
+    height: 48px;
+    width: 48px;
+    background-image: url("/static/img/btn_left.png");
+    background-size: 100%;
+    border: solid 0;
+    transition: ease-in 0.3s;
+}
+
+input[id="pass_left"]:hover{
+    transition: ease-in 0.3s;
+    cursor: pointer;
+    box-shadow: 0px 3px 5px black;
+    border-radius: 8px
+
+}
+
+input[id="pass_right"]{
+    height: 48px;
+    width: 48px;
+    background-image: url("/static/img/btn_right.png");
+    background-size: 100%;
+    border: solid 0;
+    transition: ease-in 0.3s;
+}
+
+input[id="pass_right"]:hover{
+    transition: ease-in 0.3s;
+    cursor: pointer;
+    box-shadow: 0px 3px 5px black;
+    border-radius: 8px
+
+}
+
+div[id="botaofoto"]{
+    display: flex;
+    align-items: center;
+    height: 150px;
+    width: 234px;   
+    background-color: rgb(195, 195, 195); 
+
+}
+
+
+input[id="file"]{
+    height: 125px;
+    width: 215px;    
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 371px;
+    height: 406;
+    margin: 0 0 25px 0;
+}
+
+label{
+    font-size: 20px;
+}
+
+select{
+    width: 340px;
+    height: 40px;
+    border-radius: 3px;
+    margin: 0 0 2px 0;
+}
+
+div[id="file"]{
+    width: 340px;
+    height: 40px;
+    background-color:white;
+    border-radius:8px;
+    border: solid black 1px;
+    display: flex; 
+    align-items: center;
+    margin: 0 0 22px 0;
+
+}
+
+input[id="documentacao"]{
+    margin: 0 0 0 10px;
+}
+
+form input[id="descricao"]{
+    width: 325px;
+    height: 110px;
+}
+
+option{
+    font-size: 20px;
+}
+
+div[id="caixa_descricao"]{
+    width: 370px;
+    height: 180px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 4px 5px rgb(134, 134, 134)
+}
+
+div[id="msg_descircao"]{
+    margin: 12px 0 0 0;
+}
+
+input[id="descricao"]{
+    margin: 0 0 9px 0;
+}
+
+div[id="botoes"]{
+    display: flex;
+    gap: 21px;
+}
+
+input[id="botao_post"]{
+    height: 94px;
+    width: 175px;
+    background-color:#048C21 ;
+    color: white;
+    font-size: 32px;
+    border-radius: 8px;
+    border: solid 0px;
+    box-shadow: 0px 3px 5px rgb(0, 0, 0)
+}
+
+input[id="botao_post"]:hover{
+    transition: ease-in 0.3s;
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+input[id="botao_clr"]{
+    height: 94px;
+    width: 175px;
+    background-color:#ED1400 ;
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    border-radius: 8px;
+    border: solid 0px;
+    box-shadow: 0px 3px 5px rgb(0, 0, 0)
+}
+
+input[id="botao_clr"]:hover{
+    transition: ease-in 0.3s;
+    cursor: pointer;
+    transform: scale(1.03);
+}
