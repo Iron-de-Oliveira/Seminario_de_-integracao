@@ -1,0 +1,124 @@
+body {
+  height: 150%;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  font-family: "Open Sans", sans-serif;
+  max-width: 350px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+.profile-header {
+  background: linear-gradient(to right, #023602, #33cc33);
+  padding: 25px;
+  border-radius: 3px;
+  color: white;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.top-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.ajuda {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ajuda-icon {
+  background-color: white;
+  color: green;
+  border-radius: 100%;
+  padding: 0 6px;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-pic {
+  width: 55px;
+  height: 55px;
+  background-color: white;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.user-email {
+  font-size: 14px;
+}
+
+.input-card {
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  padding: 15px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.input-card .valido {
+  color: 00FF37;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+
+.input-card label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-card input {
+  width: calc(100% - 100px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.input-card button {
+  float: right;
+  background-color: #3d3939;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#pai {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 350px;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #027e02, #00b34d, #a5f3a3);
+  padding: 3px;
+}
