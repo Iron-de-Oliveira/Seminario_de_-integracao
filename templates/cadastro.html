@@ -18,7 +18,7 @@
     <div id="pai">
         <div class="open-sans"><h1>Faça seu cadastro!</h1></div>
   
-     <form class="jura">
+     <form class="jura" id="form>
        <label for="nome">Nome:</label>
        <input type="text" name = "nome" id="nome" placeholder="Seu nome aqui" required maxlength="45" minlength="8">
 
@@ -36,7 +36,7 @@
        <input type="text" id="localizacao" name = "localizacao" placeholder="Digite seu CEP ou endereço">
      
         <div id="botoes">
-          <input type="submit" value="enviar">
+          <input type="submit" value="enviar" onclick="coletar_dados()">
           <input type="reset" value="limpar"> 
         </div>
      </form>
