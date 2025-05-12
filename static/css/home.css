@@ -52,36 +52,41 @@ div[id="display"]{
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 412px;
-    height: 902px;
+    min-width: 412px;
+    width: 95%;
+    min-height: 902px;
     margin: 10 0 10 0;
     background:linear-gradient(rgb(46, 178, 45), rgb(60, 230, 60));
 }
 
 body{
-    display: grid;
+    display: flex;
     justify-content: center;
-    background-color: black;
+    background-color: rgb(228, 228, 228);
 }
 
 
 /* estilização do main */
 main{
     display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
     justify-content: center;
-    flex-direction: column;
     background-color: white;
 
     margin: 7 0 0 0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-    width: 370px;
-    height: 129px;
+    min-width: 370px;
+    width: 95%;
+    max-height: 129px;
 }
 
 main div[id="logo"]{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 0 0 9px 0;   
 }
 
@@ -124,19 +129,21 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: clamp(2vh, 5vh, 10vh);
 
-    width: 370px;
+    min-width: 370px;
+    width: 95%;
     height: 80px;
     background-color: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-    margin: 12 0 0 0;
+    margin: 12 5 0 5;
 }
 
 nav input{
-    height: 70;
-    width: 75;
+    height: 70px;
+    min-width: 75px;
+    width: 120px;
     border-radius: 12px;
     border: solid black 1px;
     background: 0;
@@ -170,22 +177,31 @@ nav img{
 
 /* estilização do section */
 section{
+    overflow: hidden;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
+    gap: clamp(10px, 3vh, 50px);
 
     font-size: 20px;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
 
-    width: 370px;
+    min-width: 370px;
+    width:95%;
     height: 255px;
     background-color: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 14 0 0 0;
 }
 
-section img{
+section img[id="mulher1"]{
     width: 202px;
-    height: 255px
+    height: 255px;
+    
 }
+section img[id="mulher2"]{
+    width: 252px;
+    height: 255px;
+}
+

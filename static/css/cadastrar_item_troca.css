@@ -4,6 +4,15 @@
     box-sizing: 0;
 }
 
+/* fonts google class */
+.jura {
+  font-family: "Jura", sans-serif;
+}
+
+.open-sans{
+    font-family: "Open sans", sans-serif;
+}
+
 body{
     display: flex;
     justify-content: center;
