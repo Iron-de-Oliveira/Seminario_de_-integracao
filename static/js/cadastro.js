@@ -1,3 +1,4 @@
+console.log("js carregado")
 function coletar_dados(){
     const data_nome = document.getElementById("name").value;
     const data_email = document.getElementById("email").value;
