@@ -1,5 +1,6 @@
-class produtos:
-    def __init__(self, foto, categoria, condicao, documentacao, descricao ):
+class Produtos:
+    def __init__(self,id_produto, foto, categoria, condicao, documentacao, descricao ):
+        self.id_produto = id_produto,
         self.foto = foto
         self.categoria = categoria,
         self.condicao = condicao,
@@ -8,6 +9,7 @@ class produtos:
    
     def to_dict(self):
         return{
+          "id_produto": self.id_produto,
           "foto": self.foto, 
           "categoria": self.categoria,
           "condicao" : self.condicao,

@@ -19,11 +19,11 @@
     <div id="display">
         <main>
             <div id="logo">
-                <img src="/static/img/img.png" alt="">  
+                <img src="{{ url_for('static', filename='img/img.png') }}" alt="">  
             </div>    
             
             <div id="nav">
-                <img src="/static/img/menu.png" class="menu" id="menu" alt="">
+                <img src="{{ url_for('static', filename='img/menu.png') }}" class="menu" id="menu" alt="">
                 <div id="fantasma">
                     <span class="material-icons distanica-pequisar" class="onsearch" >search</span>
                     <input type="text" id="campo-pesquisa" placeholder="Pesquisar..."> 
@@ -32,10 +32,10 @@
         </main>
 
         <nav>
-            <input type="button" value="Doação">
-            <input type="button" value="Troca">
-            <input type="button" value="Login">
-            <div id="botao_user">
+            <input type="button" value="Doação" onclick="caminho_doacao()">
+            <input type="button" value="Troca" onclick="caminho_troca()">
+            <input type="button" value="Login" onclick="caminho_login()">
+            <div id="botao_user" onclick="caminho_perfil()">
                 <img src="/static/img/botao_perfil_user.png" alt="">
             </div>
         </nav>

@@ -40,8 +40,10 @@
         <p class="valido">✔ Válido</p>
         <label>Nome:</label>
         <div class="dt2">
-          <div class="dt">{{item.nome}}</div>
-          <button  class="btn btn-primary" onclick="abrirFormularioEdicao('{{ item.nome }}')">Alterar</button>
+          {% for item in resultado %}
+          <div class="dt"></div>
+          <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
+          {% endfor%}
         </div>
     </div>
 
@@ -49,8 +51,8 @@
       <p class="valido">✔ Válido</p>
       <label>Email:</label>
       <div class="dt2">
-          <div class="dt">{{item.email}}</div>
-          <button  class="btn btn-primary" onclick="abrirFormularioEdicao('{{ item.email }}')">Alterar</button>
+          <div class="dt"></div>
+          <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
         </div>
     </div>
 
@@ -58,8 +60,8 @@
       <p class="valido">✔ Válido</p>
       <label>Senha:</label>
       <div class="dt2">
-          <div class="dt">{{item.senha}}</div>
-          <button  class="btn btn-primary" onclick="abrirFormularioEdicao('{{ item.senha }}')">Alterar</button>
+          <div class="dt"></div>
+          <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
         </div>
     </div>
 
@@ -67,14 +69,14 @@
       <p class="valido">✔ Válido</p>
       <label>Endereço:</label>
       <div class="dt2">
-          <div class="dt">{{item.localizacao}}</div>
-          <button  class="btn btn-primary" onclick="abrirFormularioEdicao('{{ item.localizacao }}')">Alterar</button>
+          <div class="dt"></div>
+          <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
         </div>
     </div>
     </div>
     
   </div>
-  <script src="{{ url_for('static', filename='js/perfil_usuario.css) }}"></script>
+  <script src="{{ url_for('static', filename='js/perfil_usuario.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
