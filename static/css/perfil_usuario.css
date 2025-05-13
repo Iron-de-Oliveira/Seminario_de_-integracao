@@ -36,9 +36,19 @@ body {
   width: 24px;
   height: 24px;
 }
+.dt2{
+  display: flex;
+  gap: 20px;
+  min-width: 300px;
+}
 
 .dt{
-  max-width: 900px;
+  padding: 0 0 0 10px;
+  min-width: 300px;
+  width: 95%;
+  border: solid rgb(71, 71, 71) 1px;
+  border-radius: 4px;
+  height: 40px;
 }
 .ajuda {
   font-size: 18px;

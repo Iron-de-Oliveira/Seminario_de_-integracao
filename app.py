@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
-
+from models.user import Usuario
+from database.cenexao import conectar
 app = Flask (__name__)
 
 # rotas templates
@@ -23,6 +24,19 @@ def novo_usuario():
  data = request.get_json()
  print("Recebido do front-end:", data)
 
+@app.route("/perfil_usuario", methods=['GET'])
+def dados_usuario():
+    conexao = conectar()
+    cursor = conexao.cursor()
 
+    cursor.execute("SELECT * FROM tabela_do_banco")
+    resultados = cursor.fetchall()
+
+    cursor.close()
+    conexao.close()
+
+    
+    return render_template("perfil_usuario.html", resultado = resultados)
+    
 if __name__ == '__main__':
    app.run(debug = True)

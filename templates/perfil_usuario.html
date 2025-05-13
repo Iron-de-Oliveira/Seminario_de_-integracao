@@ -39,29 +39,37 @@
     <div class="input-card">
         <p class="valido">✔ Válido</p>
         <label>Nome:</label>
-        <input type="text" class="dt">
-        <button>Alterar</button>
+        <div class="dt2">
+          <div class="dt">{{item.nome}}</div>
+          <button  class="btn btn-primary" onclick="abrirFormularioEdicao('{{ item.nome }}')">Alterar</button>
+        </div>
     </div>
 
     <div class="input-card">
       <p class="valido">✔ Válido</p>
       <label>Email:</label>
-      <input type="email" class="dt">
-      <button>Alterar</button>
+      <div class="dt2">
+          <div class="dt">{{item.email}}</div>
+          <button  class="btn btn-primary" onclick="abrirFormularioEdicao('{{ item.email }}')">Alterar</button>
+        </div>
     </div>
 
     <div class="input-card">
       <p class="valido">✔ Válido</p>
       <label>Senha:</label>
-      <input type="password" class="dt">
-      <button>Alterar</button>
+      <div class="dt2">
+          <div class="dt">{{item.senha}}</div>
+          <button  class="btn btn-primary" onclick="abrirFormularioEdicao('{{ item.senha }}')">Alterar</button>
+        </div>
     </div>
 
     <div class="input-card">
       <p class="valido">✔ Válido</p>
       <label>Endereço:</label>
-      <input type="text" class="dt">
-      <button>Alterar</button>
+      <div class="dt2">
+          <div class="dt">{{item.localizacao}}</div>
+          <button  class="btn btn-primary" onclick="abrirFormularioEdicao('{{ item.localizacao }}')">Alterar</button>
+        </div>
     </div>
     </div>
     
