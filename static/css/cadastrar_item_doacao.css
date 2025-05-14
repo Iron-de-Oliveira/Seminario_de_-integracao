@@ -16,7 +16,8 @@
 body{
     display: flex;
     justify-content: center;
-    background-color: gainsboro;
+    background-image: url(/static/img/background2.png);
+    background-size: 500px;
 }
 
 div[id="display"]{
@@ -24,10 +25,12 @@ div[id="display"]{
     align-items: center;
     flex-direction: column;
     min-width: 412px;
-    width: 80%;
+    width: 60%;
     height: 902px;
     margin: 10 0 10 0;
-    background:linear-gradient(rgb(46, 178, 45), rgb(60, 230, 60));
+    background:linear-gradient(to bottom, #027e02, #00b34d, #a5f3a3);
+    box-shadow: 0px 0px 10px black;
+    border-radius: 12px;
 }
 
 div [id="campo_add_foto"]{
@@ -41,6 +44,7 @@ div [id="campo_add_foto"]{
     width: 80%;
     height: 260px;
     box-shadow: 0px 2px 4px black;
+    border-radius: 8px;
     background-color: white;
     margin: 33px 0 13px 0 ;
     font-size: 20px;
@@ -63,6 +67,7 @@ input[id="pass_left"]{
     background-image: url("/static/img/btn_left.png");
     background-size: 100%;
     border: solid 0;
+    box-shadow: 0px 0px 5px black;
     transition: ease-in 0.3s;
 }
 
@@ -80,6 +85,7 @@ input[id="pass_right"]{
     background-image: url("/static/img/btn_right.png");
     background-size: 100%;
     border: solid 0;
+    box-shadow: 0px 0px 5px black;
     transition: ease-in 0.3s;
 }
 
@@ -146,7 +152,7 @@ input[id="documentacao"]{
     margin: 0 0 0 10px;
 }
 
-form input[id="descricao"]{
+textarea[id="descricao"]{
     min-width: 325px;
     min-height: 110px;
     width: 100%;
@@ -173,8 +179,8 @@ div[id="msg_descircao"]{
     margin: 12px 0 0 0;
 }
 
-input[id="descricao"]{
-    margin: 0 0 9px 0;
+textarea[id="descricao"]{
+    padding: 5px 0 0 5px;
 }
 
 div[id="botoes"]{

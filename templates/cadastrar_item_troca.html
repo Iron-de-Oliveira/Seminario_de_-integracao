@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/static/css/cadastrar_item_troca.css">
 </head>
 <body>
-    <div id="display">
+    <div id="display" class="open-sans">
 
         <div id="campo_add_foto">
             <div id="add_foto">
@@ -31,9 +31,9 @@
         </div>
 
         <form>
-            <div id="form2" class="Jura">
+            <div id="form2" class="open-sans">
                 <label for="Categoria">Categoria de bem:</label>
-                <select name="opcao">
+                <select name="opcao" class="class="open-sans"">
                     <option value="a">Vestimenta</option>
                     <option value="b">Mobilia</option>
                     <option value="c">Eletrónico</option>
@@ -42,11 +42,11 @@
                 </select>
                 
                 <label for="Condição">Condição do bem:</label>
-                <select name="opcao">
+                <select name="opcao" class="open-sans">
                     <option value="a">Pouco tempo de uso</option>
                     <option value="b">1 ano de uso</option>
                     <option value="c">2 anos de uso </option>
-                    <option value="d">maisn de 3 anos de uso </option>
+                    <option value="d">Mais de 3 anos de uso </option>
                     <option value="d">Mais de 5 anos de uso</option>
                 </select>
                 
@@ -56,15 +56,15 @@
                 </div>  
             </div>
             <div id="caixa_descricao">
-                <div id="msg_descircao">
+                <div id="msg_descircao" class="open-sans">
                     <p>Descreva o motivo da troca</p>    
-                    <input type="text" name="descricao" id="descricao">
+                    <textarea id="descricao" placeholder="Digite aqui..."></textarea>
                 </div>
             </div>
                  
         </form>
 
-        <div id="botoes">
+        <div id="botoes" class="open-sans">
             <input type="button" value="Trocar" id="botao_post" onclick="coletar_dados()" >
             <input type="button" value="Cancelar" id="botao_clr"  >
         </div>

@@ -16,28 +16,36 @@
 body{
     display: flex;
     justify-content: center;
-    background-color: gainsboro;
+    background-color: white;
+    background-image: url(/static/img/image.png);
+    background-size: 900px;
 }
 
 div[id="display"]{
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 412px;
+    min-width: 412px;
+    width: 60%;
     height: 902px;
     margin: 10 0 10 0;
-    background:linear-gradient(rgb(46, 178, 45), rgb(60, 230, 60));
+    background:linear-gradient(to bottom, #027e02, #00b34d, #a5f3a3);
+    box-shadow: 0px 0px 10px black;
+    border-radius: 12px;
 }
 
 div [id="campo_add_foto"]{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     
 
-    width: 350px;
+    min-width: 350px;
+    width: 80%;
     height: 260px;
     box-shadow: 0px 2px 4px black;
+    border-radius: 8px;
     background-color: white;
     margin: 33px 0 13px 0 ;
     font-size: 20px;
@@ -60,6 +68,7 @@ input[id="pass_left"]{
     background-image: url("/static/img/btn_left.png");
     background-size: 100%;
     border: solid 0;
+    box-shadow: 0px 0px 5px black;
     transition: ease-in 0.3s;
 }
 
@@ -77,6 +86,7 @@ input[id="pass_right"]{
     background-image: url("/static/img/btn_right.png");
     background-size: 100%;
     border: solid 0;
+    box-shadow: 0px 0px 5px black;
     transition: ease-in 0.3s;
 }
 
@@ -107,27 +117,31 @@ form{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 371px;
+    min-width: 371px;
+    width:80%;
     height: 406;
     margin: 0 0 25px 0;
 }
 
 label{
+    margin: 0 40% 0 0;
     font-size: 20px;
 }
 
 select{
-    width: 340px;
+    min-width: 340px;
+    width: 100%;
     height: 40px;
     border-radius: 3px;
     margin: 0 0 2px 0;
 }
 
 div[id="file"]{
-    width: 340px;
+    min-width: 340px;
+    width: 100%;;
     height: 40px;
     background-color:white;
-    border-radius:8px;
+    border-radius:4px;
     border: solid black 1px;
     display: flex; 
     align-items: center;
@@ -139,17 +153,20 @@ input[id="documentacao"]{
     margin: 0 0 0 10px;
 }
 
-form input[id="descricao"]{
-    width: 325px;
-    height: 110px;
-}
+textarea[id="descricao"]{
+    min-width: 325px;
+    min-height: 110px;
+    width: 100%;
+}    
 
 option{
     font-size: 20px;
 }
 
 div[id="caixa_descricao"]{
-    width: 370px;
+    min-width: 370px;
+    width: 100%;
+
     height: 180px;
     background-color: white;
     display: flex;
@@ -158,11 +175,13 @@ div[id="caixa_descricao"]{
 }
 
 div[id="msg_descircao"]{
+    min-width: 370px;
+    width: 90%;
     margin: 12px 0 0 0;
 }
 
-input[id="descricao"]{
-    margin: 0 0 9px 0;
+textarea[id="descricao"]{
+    padding: 5px 0 0 5px;
 }
 
 div[id="botoes"]{
