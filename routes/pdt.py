@@ -13,7 +13,7 @@ def novo_produto():
         with conexao:
             with conexao.cursor() as cursor:
                 new_produto = Produtos(id_produto = id, foto=data['foto'], categoria=data['categoria'], condicao=data['condicao'],documentacao= data['documentacao'], descricao= data['descricao'])
-                sql = "INSERT INTO (id_aluno, nome, email, senha, numero, localizacao) VALUES (%s, %s, %s, %s, %s, %s)"
+                sql = "INSERT INTO (id_produto, foto, categoria, condicao, documentacao, descricao) VALUES (%s, %s, %s, %s, %s, %s)"
                 cursor.execute(sql, (
                     new_produto.id_produto,
                     new_produto.foto,

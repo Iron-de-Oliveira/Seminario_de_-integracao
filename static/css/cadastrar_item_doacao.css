@@ -16,9 +16,8 @@
 body{
     display: flex;
     justify-content: center;
-    background-image: url(/static/img/background2.png);
-    background-size: 500px;
-}
+    background: url(/static/img/back2.jpg);
+    background-size: 1400px, 1024px;
 
 div[id="display"]{
     display: flex;
@@ -28,8 +27,8 @@ div[id="display"]{
     width: 60%;
     height: 902px;
     margin: 10 0 10 0;
-    background:linear-gradient(to bottom, #027e02, #00b34d, #a5f3a3);
-    box-shadow: 0px 0px 10px black;
+    background:linear-gradient(to bottom, #a5f3a3, #1ab95f, #a5f3a3);
+    /* box-shadow: 0px 0px 10px rgb(255, 255, 255); */
     border-radius: 12px;
 }
 
@@ -219,5 +218,5 @@ input[id="botao_clr"]{
 input[id="botao_clr"]:hover{
     transition: ease-in 0.3s;
     cursor: pointer;
-    transform: scale(1.03);
+    transform: scale(1.03)
 }
