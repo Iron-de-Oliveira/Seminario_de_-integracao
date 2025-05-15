@@ -12,13 +12,13 @@
    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}">-->
     <link rel="stylesheet" href="../static/css/cadastro.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}">
-    <link rel="stylesheet" href="/static/css/cadastro.css">
+
 </head>
 <body>
     <div id="pai">
         <div class="open-sans"><h1>Faça seu cadastro!</h1></div>
   
-     <form class="jura" id="form>
+     <form class="jura" id="form" onsubmit="event.preventDefault(); coletar_dados();">
        <label for="nome">Nome:</label>
        <input type="text" name = "nome" id="nome" placeholder="Seu nome aqui" required maxlength="45" minlength="8">
 
@@ -29,14 +29,14 @@
        <input type="password" name = "password" id="password" required minlength="6">
 
        <label for="telefone">Telefone:</label>
-       <input type="tel" name="telefone" id="telefone" placeholder="(xx)xxxxx-xxxx" required pattern="\(\d{2}\)\d{5}-\d{4}">
+       <input type="tel" name="telefone" id="telefone" placeholder="(xx)xxxxx-xxxx" required >
 
 
        <label for="localizacao">Localização:</label>
        <input type="text" id="localizacao" name = "localizacao" placeholder="Digite seu CEP ou endereço">
      
         <div id="botoes">
-          <input type="submit" value="enviar" onclick="coletar_dados()">
+          <input type="submit" value="enviar">
           <input type="reset" value="limpar"> 
         </div>
      </form>

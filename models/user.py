@@ -1,19 +1,19 @@
 class Usuario:
-    def __init__(self, id_usuario, nome, email, senha, numero, locatizacao, completed=False) -> None:
+    def __init__(self, nome, email, senha, telefone, localizacao, id_usuario=None, completed=False):
             self.id_usuario = id_usuario
             self.nome = nome
             self.email = email
             self.senha = senha
-            self.numero = numero
-            self.localizacao = locatizacao
+            self.telefone = telefone
+            self.localizacao = localizacao
             self.completed = completed
     def to_dict(self):
         return {
-            "id_Aluno": self.id_usuario,
+            "id_usuario": self.id_usuario,
             "nome": self.nome,
             "email": self.email,
             "senha": self.senha,
-            "numero": self.numero,
+            "telefone": self.telefone,
             "localizacao": self.localizacao,
             "completed": self.completed
         } 

@@ -3,15 +3,15 @@ function coletar_dados(){
     const data_nome = document.getElementById("nome").value;
     const data_email = document.getElementById("email").value;
     const data_senha = document.getElementById("password").value;
-    const data_numero = document.getElementById("telefone").value;
+    const data_telefone = document.getElementById("telefone").value;
     const data_local = document.getElementById("localizacao").value;
 
     const dados_usuario = {
         nome: data_nome,
         email: data_email,
         senha: data_senha,
-        numero: data_numero,
-        local: data_local
+        telefone: data_telefone,
+        localizacao: data_local
     };
 
      fetch('http://localhost:5000/usuario', {

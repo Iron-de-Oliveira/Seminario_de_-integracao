@@ -5,6 +5,6 @@ def conectar():
         host='localhost',
         user='root',
         password='admin',
-        database='',
+        database='tech_solidariobd',
         cursorclass=pymysql.cursors.DictCursor
     )
