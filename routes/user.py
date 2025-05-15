@@ -17,7 +17,7 @@ def novo_usuario():
         with conexao:
             with conexao.cursor() as cursor:
                  # Verifica se email já existe
-                cursor.execute("SELECT * FROM usuario WHERE email = %s", (data['email'],))
+                cursor.execute("SELECT * FROM usuarios WHERE email = %s", (data['email'],))
                 existente = cursor.fetchone()
                 if existente:
                     return jsonify({"message": "Email já cadastrado."}), 400

@@ -18,9 +18,9 @@ def perfil_user():
     return render_template('perfil_usuario.html')
 
 # rota para página de login
-@html_rotas.route("/login_cadastro.html")
+@html_rotas.route("/login.html")
 def login():
-    return render_template ('login_cadastro.html')
+    return render_template ('login.html')
 
 # rota para página de cadastro de item para doação
 @html_rotas.route("/cadastrar_item_doacao.html")

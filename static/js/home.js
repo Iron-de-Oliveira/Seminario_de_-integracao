@@ -11,5 +11,5 @@ function caminho_perfil(){
 }
 
 function caminho_login(){
-    window.location.href = "login_cadastro.html"
+    window.location.href = "login.html"
 }

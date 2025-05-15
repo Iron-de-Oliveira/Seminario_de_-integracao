@@ -35,5 +35,5 @@ function coletar_dados(){
   
     lista.selectedIndex = 0;
 
-    window.location.href = "login_cadastro.html"
+    window.location.href = "login.html"
 }    
