@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/static/css/home.css">
 </head>
 <body>
+   
     <div id="display" class="open-sans">
         <main>
             <div id="logo">
@@ -31,14 +32,27 @@
             </div>
         </main>
 
-        <nav>
-            <input type="button" value="Doação" onclick="caminho_doacao()">
-            <input type="button" value="Troca" onclick="caminho_troca()">
-            <input type="button" value="Login" onclick="caminho_login()">
-            <div id="botao_user" onclick="caminho_perfil()">
-                <img src="/static/img/botao_perfil_user.png" alt="">
-            </div>
-        </nav>
+ <nav>
+    {% if usuario %}
+           <h1>Bem-vindo, {{ usuario.nome }}!</h1>
+           <p>Email: {{ usuario.email }}</p>
+           <input type="button" value="Doação" onclick="caminho_doacao()">
+           <input type="button" value="Troca" onclick="caminho_troca()">
+           <input type="button" value="Sair" onclick="caminho_logout()">
+           <div id="botao_user" onclick="caminho_perfil()">
+            <img src="/static/img/botao_perfil_user.png" alt="">
+        </div>
+    {% else %}
+           <h1>Bem-vindo, visitante!</h1>
+           <input type="button" value="Doação" onclick="caminho_doacao()">
+           <input type="button" value="Troca" onclick="caminho_troca()">
+           <input type="button" value="Login" onclick="caminho_login()">
+           <input type="button" value="Cadastro" onclick="caminho_cadastro()">
+    {% endif %}
+</nav>
+        <div id="botao_user" onclick="caminho_perfil()">
+            <img src="/static/img/botao_perfil_user.png" alt="">
+        </div>
 
         <section>
             <img src="/static/img/mulher.png" id="mulher2">

@@ -1,20 +1,22 @@
 class Produtos:
-    def __init__(self,id_produto, foto, categoria, condicao, documentacao, descricao ):
+    def __init__(self, id_produto, foto, descricao, categoria, condicao, status ):
         self.id_produto = id_produto,
-        self.foto = foto
+        self.foto = foto,
+        self.descricao = descricao,
         self.categoria = categoria,
         self.condicao = condicao,
-        self.documentacao = documentacao,
-        self.descricao = descricao
+        self.status = status
+        
    
     def to_dict(self):
         return{
           "id_produto": self.id_produto,
           "foto": self.foto, 
+          "descricao": self.descricao, 
           "categoria": self.categoria,
           "condicao" : self.condicao,
-          "documentacao": self.documentacao,
-          "descricao": self.descricao  
+          "status": self.status
+ 
         }
         
 

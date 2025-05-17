@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
+from flask_login import login_required
 from models.user import Usuario
 from flask_cors import cross_origin
 from database.cenexao import conectar
@@ -17,7 +18,7 @@ def novo_usuario():
         with conexao:
             with conexao.cursor() as cursor:
                  # Verifica se email já existe
-                cursor.execute("SELECT * FROM usuarios WHERE email = %s", (data['email'],))
+                cursor.execute("SELECT * FROM usuario WHERE email = %s", (data['email'],))
                 existente = cursor.fetchone()
                 if existente:
                     return jsonify({"message": "Email já cadastrado."}), 400
@@ -42,13 +43,14 @@ def novo_usuario():
 
 # exibir usuário
 @user_rotas.route("/perfil_usuario", methods=['GET'])
+@login_required
 def dados_usuario():
 
     
     conexao = conectar()
     cursor = conexao.cursor()
 
-    cursor.execute("SELECT * FROM usuario")
+    cursor.execute("SELECT id_usuario, nome, email, telefone, localizacao from usuario")
     resultados = cursor.fetchall()
 
     cursor.close()
@@ -59,8 +61,7 @@ def dados_usuario():
         usuarios.append({
             "id_usuario": row[0],
             "nome": row[1],
-            "email": row[2],
-            "senha": row[3],  
+            "email": row[2], 
             "telefone": row[4],
             "localizacao": row[5]
         })

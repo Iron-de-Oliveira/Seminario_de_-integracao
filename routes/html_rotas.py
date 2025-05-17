@@ -1,11 +1,15 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect, url_for, session
+from models.user import Usuario
 
 html_rotas = Blueprint('html_rotas', __name__)
 
 # rota da página principal
 @html_rotas.route("/")
 def home():
-    return render_template("home.html")
+    usuario = None
+    if 'user_id' in session:
+        usuario = Usuario.buscar_por_id(session['user_id'])
+    return render_template('home.html', usuario=usuario)
 
 # rota para págna cadastro
 @html_rotas.route("/cadastro.html")
@@ -15,7 +19,14 @@ def cadastro():
 # rota para página de perfil do usuário 
 @html_rotas.route("/perfil_usuario.html")
 def perfil_user():
-    return render_template('perfil_usuario.html')
+    user_id = session.get('user_id')
+    if not user_id:
+        return redirect(url_for('auth.login'))
+
+    usuario = Usuario.buscar_por_id(user_id)
+    if not usuario:
+        return "Usuário não encontrado", 404
+    return render_template('perfil_usuario.html', usuario=usuario)
 
 # rota para página de login
 @html_rotas.route("/login.html")

@@ -13,3 +13,11 @@ function caminho_perfil(){
 function caminho_login(){
     window.location.href = "login.html"
 }
+function caminho_logout() {
+    window.location.href = "/auth/logout";
+}
+function caminho_cadastro() {
+    window.location.href = "cadastro.html"; 
+}
+
+

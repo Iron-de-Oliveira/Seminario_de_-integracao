@@ -7,7 +7,11 @@ from routes.pdt import pdt_rotas
 from routes.auth import auth_bp
 from models.user import Usuario
 from flask_cors import CORS
+from database.cenexao import conectar
+from routes.html_rotas import html_rotas
+
 app = Flask (__name__)
+app.secret_key = "uma_chave_super_secreta_e_complexa_aqui_123!"
 
 CORS(app)
 
@@ -17,7 +21,16 @@ login_manager.init_app(app)
 
 @login_manager.user_loader
 def load_user(user_id):
-    return Usuario.buscar_por_id(user_id)
+    # Busque no banco o usuário pelo id e retorne o objeto Usuario
+    conexao = conectar()
+    cursor = conexao.cursor()
+    cursor.execute("SELECT idusuario, nome, email, senha, telefone, localizacao FROM usuario WHERE idusuario = %s", (user_id,))
+    row = cursor.fetchone()
+    cursor.close()
+    conexao.close()
+    if row:
+        return Usuario(*row)
+    return None
 
 # rotas html via bluePrint
 app.register_blueprint(html_rotas)

@@ -32,8 +32,8 @@
       <div class="user-info">
         <img src="https://cdn-icons-png.flaticon.com/512/5987/5987462.png" class="profile-pic" alt="Foto do Perfil" />
         <div>
-          <p class="user-name">Nome do Usuário</p>
-          <p class="user-email">Email do Usuário</p>
+           <p class="user-name">{{ usuario.nome }}</p>
+           <p class="user-email">{{ usuario.email }}</p>
         </div>
       </div>
     </div>
@@ -42,10 +42,8 @@
         <p class="valido">✔ Válido</p>
         <label>Nome:</label>
         <div class="dt2">
-          {% for item in resultado %}
-          <div class="dt"></div>
+          <div class="dt">{{ usuario.nome }}</div>
           <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
-          {% endfor%}
         </div>
     </div>
 
@@ -53,7 +51,7 @@
       <p class="valido">✔ Válido</p>
       <label>Email:</label>
       <div class="dt2">
-          <div class="dt"></div>
+          <div class="dt">{{ usuario.email }}</div>
           <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
         </div>
     </div>
@@ -62,7 +60,7 @@
       <p class="valido">✔ Válido</p>
       <label>Senha:</label>
       <div class="dt2">
-          <div class="dt"></div>
+          <div class="dt">********</div>
           <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
         </div>
     </div>
@@ -71,7 +69,7 @@
       <p class="valido">✔ Válido</p>
       <label>Endereço:</label>
       <div class="dt2">
-          <div class="dt"></div>
+          <div class="dt">{{ usuario.telefone }}</div>
           <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
         </div>
     </div>

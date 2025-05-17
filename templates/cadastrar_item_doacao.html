@@ -21,7 +21,7 @@
                 <input type="button" id="pass_left" >
                 
                 <div id="botaofoto">
-                    <input type="file" id="file">
+                    <input type="file" id="arquivo" accept="image/*">
                 </div>
            
                 <input type="button" id="pass_right" >
@@ -33,41 +33,37 @@
 
         </div>
         <form>
-            <div id="form2" class="open-sans>
+            <div id="form2" class="open-sans">
                 <label for="Categoria">Categoria de bem:</label>
                 <select name="opcao" id="Categoria" class="open-sans">
                     <option value="a">Vestimenta</option>
                     <option value="b">Mobilia</option>
                     <option value="c">Eletrónico</option>
                     <option value="d">Ferramenta</option>
-                    <option value="d">Outros</option>
+                    <option value="e">Outros</option>
                 </select>
                 
-                <label for="Condição">Condição do bem:</label>
+                <label for="condicao">Condição do bem:</label>
                 <select name="opcao" id="condicao" class="open-sans">
                     <option value="a">Pouco tempo de uso</option>
                     <option value="b">1 ano de uso</option>
                     <option value="c">2 anos de uso </option>
                     <option value="d">Mais de 3 anos de uso </option>
-                    <option value="d">Mais de 5 anos de uso</option>
+                    <option value="e">Mais de 5 anos de uso</option>
                 </select>
                 
-                <label for="documentacao">Documentação:</label>
-                <div id="file"> 
-                    <input type="file" name="documentacao" id="documentacao">
-                </div>  
             </div>
             <div id="caixa_descricao">
                 <div id="msg_descircao" class="open-sans">
-                    <p>Descreva o motivo da troca</p>    
-                    <textarea  id="descricao" placeholder="Digite aqui..."></textarea>
+                    <p>Descreva o motivo da doação</p>    
+                    <textarea name="motivo" id="descricao" placeholder="Digite aqui..."></textarea>
                 </div>
             </div>
                  
         </form>
 
         <div id="botoes" class="open-sans">
-            <input type="button" value="Doar" id="botao_post" onclick="coletar_dados()">
+            <input type="button" value="Doação" id="botao_post" onclick="coletar_dados()">
             <input type="button" value="Cancelar" id="botao_clr">
         </div>
             

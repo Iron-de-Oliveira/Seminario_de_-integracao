@@ -1,5 +1,6 @@
-function caminho_cadastro(){
-    window.location.href = "cadastro.html"
+function caminho_cadastro() {
+    const url = document.getElementById("btnCadastro").dataset.urlCadastro;
+    window.location.href = url;
 }
 
 document.getElementById("form").addEventListener("submit", async function(e) {
@@ -21,7 +22,7 @@ document.getElementById("form").addEventListener("submit", async function(e) {
   });
 
   if (response.redirected) {
-    window.location.href = "home.html"; // redireciona se o login for bem-sucedido
+     window.location.href = response.url;
   } else {
     const text = await response.text();
     alert("Erro no login: " + text);
