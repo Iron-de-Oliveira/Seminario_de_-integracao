@@ -3,6 +3,7 @@ from models.user import Usuario
 
 html_rotas = Blueprint('html_rotas', __name__)
 
+
 # rota da página principal
 @html_rotas.route("/")
 def home():

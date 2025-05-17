@@ -3,8 +3,13 @@ from flask_login import login_required
 from models.user import Usuario
 from flask_cors import cross_origin
 from database.cenexao import conectar
+import re
 
 user_rotas = Blueprint('user_rotas', __name__)
+
+def validar_email(email):
+    padrao = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    return bool(re.match(padrao, email))
 
 # NOVO USUÁRIO
 @user_rotas.route("/usuario", methods=['POST'])
@@ -66,5 +71,45 @@ def dados_usuario():
             "localizacao": row[5]
         })
 
-    
     return render_template("perfil_usuario.html", resultado=usuarios)
+
+# Atualizar usuário
+
+@user_rotas.route("/usuario/<int:id_usuario>", methods=['PUT'])
+@cross_origin()
+@login_required
+def atualizar_usuario(id_usuario):
+    try:
+        data = request.get_json()
+        print("Dados para atualização:", data)
+
+        conexao = conectar()
+        with conexao:
+            with conexao.cursor() as cursor:
+                # Verifica se usuário existe
+                cursor.execute("SELECT * FROM usuario WHERE id_usuario = %s", (id_usuario,))
+                existente = cursor.fetchone()
+                if not existente:
+                    return jsonify({"message": "Usuário não encontrado."}), 404
+                
+                # Monta a query dinamicamente para atualizar só os campos enviados
+                campos = []
+                valores = []
+                for campo in ['nome', 'email', 'senha', 'telefone', 'localizacao']:
+                    if campo in data:
+                        campos.append(f"{campo} = %s")
+                        valores.append(data[campo])
+
+                if not campos:
+                    return jsonify({"message": "Nenhum campo para atualizar."}), 400
+
+                valores.append(id_usuario)
+                sql = f"UPDATE usuario SET {', '.join(campos)} WHERE id_usuario = %s"
+                cursor.execute(sql, valores)
+            conexao.commit()
+
+    except Exception as e:
+        print("Erro ao atualizar no banco:", e)
+        return jsonify({"message": "Erro ao atualizar usuário"}), 500
+    
+    return jsonify({"message": "Usuário atualizado com sucesso!"}), 200
