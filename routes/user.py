@@ -28,7 +28,7 @@ def novo_usuario():
                 if existente:
                     return jsonify({"message": "Email já cadastrado."}), 400
                 # id = gerar_id_unico(cursor) # variável recebe id aleatório
-                new_usuario = Usuario(id_usuario = None, nome=data['nome'], email=data['email'], senha= data['senha'], telefone= data['telefone'], localizacao= data['localizacao'])
+                new_usuario = Usuario(idusuario = None, nome=data['nome'], email=data['email'], senha= data['senha'], telefone= data['telefone'], localizacao= data['localizacao'])
                 sql = "INSERT INTO usuario (nome, email, senha, telefone, localizacao) VALUES (%s, %s, %s, %s, %s)"
                 cursor.execute(sql, (
                     new_usuario.nome,

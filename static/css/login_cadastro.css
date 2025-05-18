@@ -55,7 +55,7 @@ p{
 form{
     margin: 47px 33px 0px 33px;
     width: 345px;
-    height: 200px;
+    height: 500px;
 }
 
 label{
@@ -86,17 +86,15 @@ div[id="botoes"]{
     margin: 0 0 50px 0;
 }
 
-input[value="Login"],
-     [value="Cadastro"]{
+input[value="Login"]{
         height: 55px;
-        width: 120px;
+        width: 50%;
         border-radius: 8px;
         transition: ease-in 0.3s;
         
 }
 
-input[value="Login"]:hover,
-     [value="Cadastro"]:hover{
+input[value="Login"]:hover{
     cursor: pointer;
     transition: ease-in 0.3s;
     transform: scale(1.03);
@@ -111,13 +109,21 @@ input[value="Login"]{
     box-shadow: 0px 3px 5px rgb(168, 167, 167);
 }
 
-input[value="Cadastro"]{
+button[id="btnCadastro"]{
+    height: 55px;
+    width: 50%;
     background-color: 433838;
     font-size: 25px;
     color: white;
     border: solid 0px;
     box-shadow: 0px 3px 5px rgb(168, 167, 167);
+    border-radius: 8px;
+}
 
+button[id="btnCadastro"]:hover{
+ cursor: pointer;
+    transition: ease-in 0.3s;
+    transform: scale(1.03);   
 }
 
 

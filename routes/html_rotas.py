@@ -38,8 +38,3 @@ def login():
 @html_rotas.route("/cadastrar_item_doacao.html")
 def casdastro_doacao():
         return render_template('cadastrar_item_doacao.html')   
-
-# rota para página de cadastro de item para troca
-@html_rotas.route("/cadastrar_item_troca.html")
-def casdastro_troca():
-        return render_template('cadastrar_item_troca.html')  
