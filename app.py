@@ -9,6 +9,7 @@ from models.user import Usuario
 from flask_cors import CORS
 from database.cenexao import conectar
 
+
 app = Flask (__name__)
 app.secret_key = "uma_chave_super_secreta_e_complexa_aqui_123!"
 
