@@ -6,11 +6,11 @@ import site
 
 
 # Caminho para o ambiente virtual
-venv_path = '/home/grupotech/Seminario_de_integracao/venv'
+venv_path = '/home/tech/Seminario_de_integracao/venv'
 
 site.addsitedir(os.path.join(venv_path, 'lib/python3.12/site-packages'))
 # Caminho absoluto
-sys.path.insert(0,"/home/grupotech/Seminario_de_integracao")
+sys.path.insert(0,"/home/tech/Seminario_de_integracao")
 
 #logging para erros
 logging.basicConfig(stream=sys.stderr)
