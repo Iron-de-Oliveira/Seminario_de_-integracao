@@ -3,7 +3,7 @@ function caminho_doacao(){
 }
 
 function caminho_troca(){
-    window.location.href = "cadastrar_item_troca.html"
+    window.location.href = "cadastrar_item_doacao.html"
 }
 
 function caminho_perfil(){

@@ -45,7 +45,7 @@
 }
 
   /*  */ /*  */
- /* classes */
+ /* estilizações via id */
 /*  */ /*  */
 
 div[id="display"]{
@@ -72,7 +72,7 @@ main{
     flex-wrap: wrap;
 
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: white;
 
     margin: 7 0 0 0;
@@ -102,7 +102,8 @@ main div[id="fantasma"]{
     height: 35px;
     border-radius: 20px;
     border: solid black 1px;
-    padding: 0 0 0 5px;
+    padding: 0 20px 0 5px;
+    margin: 5px 20px 5px 5px;
 }
 
 main input[id="campo-pesquisa"]{
@@ -149,6 +150,7 @@ nav input{
     border: solid black 1px;
     background: 0;
     font-size: 17px;
+    margin: 2.5px 0 2.5px 0;
 }
 
 nav input:hover{
@@ -179,23 +181,26 @@ nav img{
     width: 300px;
 }
 
+.divsc{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
 
 /* estilização do section */
 section{
+    position: relative;
     overflow: hidden;
     display: flex;
-    text-align: center;
-    justify-content: center;
     align-items: center;
-    gap: clamp(10px, 3vh, 50px);
-
-    font-size: 20px;
+    justify-content:space-between ;
+    font-size: 24px;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
-
     min-width: 370px;
     width:95%;
     height: 255px;
-    background-color: white;
+    background:linear-gradient(to right, rgb(99, 206, 255), white ,white,   rgb(99, 206, 255));
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 14 0 0 0;
 }
@@ -203,9 +208,14 @@ section{
 section img[id="mulher1"]{
     width: 202px;
     height: 255px;
-    
+    margin-left: 55px;
 }
-section img[id="mulher2"]{
+
+img[id="back3"]{
+    width: 252px;
+    height: 255px;
+}
+img[id="back4"]{
     width: 252px;
     height: 255px;
 }
