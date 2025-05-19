@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
 from models.produtos import Produtos
 from flask_cors import cross_origin
+import base64
 from database.cenexao import conectar
-import re
 
 pdt_rotas = Blueprint('pdt_rotas', __name__)
 
@@ -44,23 +44,30 @@ def novo_produto():
 
 
 # mostrar produtos em home
-@pdt_rotas.route("/home", methods=['GET'])
-def dados_produtos():
 
-    
+@pdt_rotas.route("/resultado", methods=['GET'])
+
+
+def dados_produtos():
     conexao = conectar()
     cursor = conexao.cursor()
 
-    cursor.execute("SELECT foto from produtos")
+    cursor.execute("SELECT foto FROM produtos")
     resultados = cursor.fetchall()
 
     cursor.close()
     conexao.close()
 
     Produtos = []
-    for row in resultados:
-        Produtos.append({
-            "foto": row[0],
-        })
 
-    return render_template("perfil_usuario.html", resultado=Produtos)
+    for row in resultados:
+        foto_bytes = row["foto"]
+
+        if foto_bytes:
+            foto_base64 = base64.b64encode(foto_bytes).decode('utf-8')
+            foto_base64 = f"data:image/png;base64,{foto_base64}"
+        else:
+            foto_base64 = ''
+
+    return render_template("home.html", resultado=Produtos)
+
