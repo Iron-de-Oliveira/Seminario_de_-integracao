@@ -10,6 +10,7 @@ from flask_cors import CORS
 from database.cenexao import conectar
 from routes.html_rotas import html_rotas
 
+
 app = Flask (__name__)
 app.secret_key = "uma_chave_super_secreta_e_complexa_aqui_123!"
 
