@@ -1,3 +1,4 @@
 .tech/
 __pycache__/
 *.pyc
+.venv
