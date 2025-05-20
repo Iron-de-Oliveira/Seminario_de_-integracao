@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, session
 from models.user import Usuario
+from database.cenexao import conectar
 
 html_rotas = Blueprint('html_rotas', __name__)
 
@@ -10,7 +11,35 @@ def home():
     usuario = None
     if 'user_id' in session:
         usuario = Usuario.buscar_por_id(session['user_id'])
-    return render_template('home.html', usuario=usuario)
+
+    # Buscar produtos do banco
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute("SELECT foto FROM produtos")
+    resultados = cursor.fetchall()
+
+    cursor.close()
+    conexao.close()
+
+    produtos = []
+
+    for row in resultados:
+        foto_path = row["foto"]  
+
+        if foto_path:
+            caminho_completo = f"/static/{foto_path}"
+        else:
+            caminho_completo = ""
+
+        produtos.append({
+            "foto": caminho_completo,
+        })    
+
+    # Renderizar o template passando as duas variáveis
+    return render_template("home.html", usuario=usuario, resultado=produtos)
+
+    
 
 # rota para págna cadastro
 @html_rotas.route("/cadastro.html")

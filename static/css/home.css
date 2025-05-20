@@ -55,14 +55,17 @@ div[id="display"]{
     min-width: 412px;
     width: 95%;
     min-height: 902px;
+    height: auto;
     margin: 10 0 10 0;
-    background:linear-gradient(rgb(46, 178, 45), rgb(60, 230, 60));
 }
 
 body{
     display: flex;
     justify-content: center;
-    background-color: rgb(228, 228, 228);
+    background:linear-gradient(#4dc07f, #51c878, #51c878,#4dc07f) no-repeat center center fixed;
+    background-size: cover; /* cobre toda a viewport sem repetir */
+    margin: 0; /* evita espaços padrão do body */
+    min-height: 100vh;
 }
 
 
@@ -226,25 +229,29 @@ img[id="back4"]{
 .galeria {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2rem;
-    background-color: #f5f5f5;
+    gap: 16px;
+    margin-top: 40px;  /* Espaço entre o conteúdo acima */
+    padding: 20px;
+    justify-content: space-between;
+    min-width: 370px;
+    width:95%;
+    height: 255px;
 }
+
 
 .card {
-    width: 250px;
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    padding-bottom: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-1px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 

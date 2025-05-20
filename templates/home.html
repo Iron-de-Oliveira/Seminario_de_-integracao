@@ -66,7 +66,6 @@
     {% for item in resultado %}
         <div class="card">
             {% if item.foto %}
-                <pre>{{ item.foto[:100] }}</pre>
                 <img src="{{ item.foto }}" alt="Foto do produto">
             {% else %}
                 <p>Imagem não disponível</p>
@@ -79,6 +78,7 @@
         </div>
     {% endfor %}
     </div>
+
 </div>
 
     <script src="{{ url_for('static', filename='js/home.js') }}"></script>
