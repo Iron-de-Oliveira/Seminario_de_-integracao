@@ -13,52 +13,63 @@
     <link rel="stylesheet" href="/static/css/cadastrar_item_doacao.css">
 </head>
 <body>
-<div id="display" class="open-sans">
-
-    <form id="form-produto" method="POST" enctype="multipart/form-data">
-        <div id="add_foto">
-            <input type="button" id="pass_left">
-            <div id="botaofoto">
-                <input type="file" name="foto" id="arquivo" accept="image/*">
-            </div>
-            <input type="button" id="pass_right">
-        </div>
-
-        <p>Adicione fotos do bem para melhor<br> visualização do seu estado de<br> conservação.</p>
-
-        <div id="form2" class="open-sans">
-            <label for="Categoria">Categoria de bem:</label>
-            <select name="categoria" id="Categoria" class="open-sans">
-                <option value="Vestimenta">Vestimenta</option>
-                <option value="Mobilia">Mobilia</option>
-                <option value="Eletrónico">Eletrónico</option>
-                <option value="Ferramenta">Ferramenta</option>
-                <option value="Outros">Outros</option>
-            </select>
+    <div id="display" class="open-sans">
+        <form id="form-produto" method="POST" enctype="multipart/form-data">
+            <div id="add_foto">
             
-            <label for="condicao">Condição do bem:</label>
-            <select name="condicao" id="condicao" class="open-sans">
-                <option value="Pouco tempo de uso">Pouco tempo de uso</option>
-                <option value="1 ano de uso">1 ano de uso</option>
-                <option value="2 anos de uso">2 anos de uso</option>
-                <option value="Mais de 3 anos de uso">Mais de 3 anos de uso</option>
-                <option value="Mais de 5 anos de uso">Mais de 5 anos de uso</option>
-            </select>
-        </div>
+                <div id="caixa_foto">
+                    <input type="button" id="pass_left"> 
+                    <div id="botaofoto">
+                        <p class="fixo">Clique para adicionar uma foto. </p>
+                        <span class="fixo" class="material-icons">camera</span>
+                        <input type="file" name="foto" id="arquivo" accept="image/*">
+                    </div>
+                    <input type="button" id="pass_right">
+                </div>       
+                <p>Adicione fotos do bem para melhor<br> visualização do seu estado de<br> conservação.</p>
 
-        <div id="caixa_descricao">
-            <div id="msg_descircao" class="open-sans">
-                <p>Descreva o motivo da doação</p>
-                <textarea name="descricao" id="descricao" placeholder="Digite aqui..."></textarea>
             </div>
-        </div>
+            <div id="form2" class="open-sans">
+                <label for="Categoria" id="categoria">Categoria de bem:</label>
+                <select name="categoria" id="Categoria" class="open-sans">
+                    <option value="Vestimenta">Vestimenta</option>
+                    <option value="Mobilia">Mobilia</option>
+                    <option value="Eletrónico">Eletrónico</option>
+                    <option value="Ferramenta">Ferramenta</option>
+                    <option value="Outros">Outros</option>
+                </select>
+                
+                <label for="condicao" id="condicao">Condição do bem:</label>
+                <select name="condicao" id="condicao" class="open-sans">
+                    <option value="Pouco tempo de uso">Pouco tempo de uso</option>
+                    <option value="1 ano de uso">1 ano de uso</option>
+                    <option value="2 anos de uso">2 anos de uso</option>
+                    <option value="Mais de 3 anos de uso">Mais de 3 anos de uso</option>
+                    <option value="Mais de 5 anos de uso">Mais de 5 anos de uso</option>
+                </select>
+                <div id="esc">
+                    <label for="troca">Troca</label>
+                    <input type="radio" value="Troca" name="opcao" id="troca">
+                    <label for="troca">Doação</label>
+                    <input type="radio" value="Doacao" name="opcao" id="doação">
+                </div>
+            </div>
 
-        <div id="botoes" class="open-sans">
-            <input type="button" value="Doação" id="botao_post" onclick="coletar_dados()">
-            <input type="button" value="Cancelar" id="botao_clr">
-        </div>
-    </form>
-</div>
+            <div id="caixa_descricao">
+                <div id="msg_descircao" class="open-sans">
+                    <p>Descreva o motivo da doação</p>
+                    <textarea name="descricao" id="descricao" placeholder="Digite aqui..."></textarea>
+                </div>
+            </div>
+
+            <div id="botoes" class="open-sans">
+                <input type="button" value="Postar" id="botao_post" onclick="coletar_dados()">
+                <input type="button" value="Cancelar" id="botao_clr">
+            </div>
+        </form>
+    </div>
+
+    <img src="/static/img/pessoas.png" alt="">
     <script src="{{ url_for('static', filename='js/cadastrar_item_doacao.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
