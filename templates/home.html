@@ -63,16 +63,20 @@
         </section>
 
     <div class="galeria">
-        {% for item in resultado %}
+    {% for item in resultado %}
         <div class="card">
-            <img src="data:image/jpeg;base64,{{ item.foto }}" alt="Foto do produto">
+            {% if item.foto %}
+                <img src="{{ item.foto }}" alt="Foto do produto">
+            {% else %}
+                <p>Imagem não disponível</p>
+            {% endif %}
             <p>Disponível para troca</p>
             <div class="funcoes">
-            <span class="material-icons">favorite</span>
-            <span class="material-icons">chat</span>
+                <span class="material-icons">favorite</span>
+                <span class="material-icons">chat</span>
             </div>
         </div>
-        {% endfor %}
+    {% endfor %}
     </div>
 
 </div>
