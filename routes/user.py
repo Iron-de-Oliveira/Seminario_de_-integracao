@@ -55,7 +55,7 @@ def dados_usuario():
     conexao = conectar()
     cursor = conexao.cursor()
 
-    cursor.execute("SELECT id_usuario, nome, email, telefone, localizacao from usuario")
+    cursor.execute("SELECT idusuario, nome, email, telefone, localizacao From usuario")
     resultados = cursor.fetchall()
 
     cursor.close()
@@ -75,10 +75,10 @@ def dados_usuario():
 
 # Atualizar usuário
 
-@user_rotas.route("/usuario/<int:id_usuario>", methods=['PUT'])
+@user_rotas.route("/usuario/<int:idusuario>", methods=['PUT'])
 @cross_origin()
 @login_required
-def atualizar_usuario(id_usuario):
+def atualizar_usuario(idusuario):
     try:
         data = request.get_json()
         print("Dados para atualização:", data)
@@ -87,7 +87,7 @@ def atualizar_usuario(id_usuario):
         with conexao:
             with conexao.cursor() as cursor:
                 # Verifica se usuário existe
-                cursor.execute("SELECT * FROM usuario WHERE id_usuario = %s", (id_usuario,))
+                cursor.execute("SELECT * FROM usuario WHERE idusuario = %s", (idusuario,))
                 existente = cursor.fetchone()
                 if not existente:
                     return jsonify({"message": "Usuário não encontrado."}), 404
@@ -103,8 +103,8 @@ def atualizar_usuario(id_usuario):
                 if not campos:
                     return jsonify({"message": "Nenhum campo para atualizar."}), 400
 
-                valores.append(id_usuario)
-                sql = f"UPDATE usuario SET {', '.join(campos)} WHERE id_usuario = %s"
+                valores.append(idusuario)
+                sql = f"UPDATE usuario SET {', '.join(campos)} WHERE idusuario = %s"
                 cursor.execute(sql, valores)
             conexao.commit()
 

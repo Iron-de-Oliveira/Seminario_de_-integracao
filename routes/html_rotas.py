@@ -52,11 +52,13 @@ def perfil_user():
     user_id = session.get('user_id')
     if not user_id:
         return redirect(url_for('auth.login'))
-
+    
     usuario = Usuario.buscar_por_id(user_id)
     if not usuario:
         return "Usuário não encontrado", 404
+
     return render_template('perfil_usuario.html', usuario=usuario)
+    
 
 # rota para página de login
 @html_rotas.route("/login.html")
