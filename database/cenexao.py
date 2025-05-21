@@ -4,7 +4,7 @@ def conectar():
     return pymysql.connect(
         host='localhost',
         user='root',
-        password='adimin',
+        password='admin',
         database='tech_solidariobd',
         cursorclass=pymysql.cursors.DictCursor
     )
