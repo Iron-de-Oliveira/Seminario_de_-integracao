@@ -46,6 +46,47 @@ def novo_usuario():
         return jsonify({"message": "Erro ao salvar no banco de dados"}), 500
     return jsonify({"message": "Usuário cadastrado com sucesso!"}), 201
 
+# post de foto do perfil
+import os
+from flask import request, jsonify
+from werkzeug.utils import secure_filename
+
+@user_rotas.route("/usuario/<int:idusuario>", methods=['PUT'])
+@cross_origin()
+def INSERIR_FOTO(idusuario):
+    try:
+        foto = request.files.get("foto_perfil")
+
+        if not foto:
+            return jsonify({"message": "Imagem não enviada"}), 400
+
+        # Cria pasta se não existir
+        pasta_destino = os.path.join("static", "foto_perfil")
+        os.makedirs(pasta_destino, exist_ok=True)
+
+        # Nome seguro do arquivo
+        nome_arquivo = secure_filename(foto.filename)
+        caminho = os.path.join(pasta_destino, nome_arquivo)
+        foto.save(caminho)
+
+        # Caminho a ser salvo no banco (relativo ao static/)
+        caminho_no_banco = os.path.join("foto_perfil", nome_arquivo).replace('\\', '/')
+
+        conexao = conectar()
+        with conexao:
+            with conexao.cursor() as cursor:
+                sql = "UPDATE usuario SET foto_perfil = %s WHERE idusuario = %s"
+                cursor.execute(sql, (caminho_no_banco, idusuario))
+            conexao.commit()
+
+        return jsonify({"message": "Foto de perfil atualizada com sucesso!"}), 200
+
+    except Exception as e:
+        print("Erro ao atualizar a foto:", e)
+        return jsonify({"message": "Erro no servidor"}), 500
+
+
+
 # exibir usuário
 @user_rotas.route("/perfil_usuario", methods=['GET'])
 @login_required
@@ -68,7 +109,7 @@ def dados_usuario():
             "nome": row[1],
             "email": row[2], 
             "telefone": row[4],
-            "localizacao": row[5]
+            "localizacao": row[5],
         })
 
     return render_template("perfil_usuario.html", resultado=usuarios)

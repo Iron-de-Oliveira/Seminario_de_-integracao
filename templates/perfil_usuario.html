@@ -30,22 +30,42 @@
         </div>
         <span class="ajuda">Ajuda <span class="ajuda-icon">?</span></span>
       </div>
+<<<<<<< HEAD
       <div class="user-info">
         <img src="https://cdn-icons-png.flaticon.com/512/5987/5987462.png" class="profile-pic" alt="Foto do Perfil" />
         <div>
            <p class="user-name">{{usuario.nome}}<p>
            <p class="user-email">{{usuario.email}}</p>
+=======
+        <div class="user-info">
+          <form id="foto_perfil" method="POST" enctype="multipart/form-data">
+            <div class="c1">
+              {% if usuario.foto_perfil %}
+                  <img src="{{ url_for('static', filename=usuario.foto_perfil) }}" id="ft">
+              {% else %}
+                  <img src="{{ url_for('static', filename='img/botao_perfil_user.png') }}" id="ft">
+              {% endif %}
+              <input type="file" id="file">
+            </div>
+            <div class="c2">
+              <input type="button" value="Salvar" id="salvar" onclick="foto_perfil()" > 
+            </div>
+          </form>
+          <div id="bts">
+            <p class="user-name">{{usuario.nome}}<p>
+            <p class="user-email">{{usuario.email}}</p>
+          </div>
+>>>>>>> 8c07cab (get perfil usuário)
         </div>
       </div>
-    </div>
 
-    <div class="input-card">
+      <div class="input-card">
         <p class="valido">✔ Válido</p>
         <label>Nome:</label>
         <div class="dt2">
           <div class="dt">{{usuario.nome}}</div>
           <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
-        </div>
+      </div>
     </div>
 
     <div class="input-card">
@@ -61,7 +81,7 @@
       <p class="valido">✔ Válido</p>
       <label>Senha:</label>
       <div class="dt2">
-          <div class="dt">********</div>
+          <div class="dt">{{usuario.senha}}</div>
           <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
         </div>
     </div>
@@ -80,12 +100,37 @@
       <label>Endereço:</label>
       <div class="dt2">
           <div class="dt">{{usuario.localizacao}}</div>
+<<<<<<< HEAD
+=======
+          <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
+        </div>
+    </div>
+
+    <div class="input-card">
+      <p class="valido">✔ Válido</p>
+      <label>Telefone:</label>
+      <div class="dt2">
+          <div class="dt">{{usuario.telefone}}</div>
+>>>>>>> 8c07cab (get perfil usuário)
           <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
         </div>
     </div>
     </div>
     
   </div>
+  
+<script>
+    fetch('/auth/user_id')
+      .then(response => response.json())
+      .then(data => {
+        if (data.user_id) {
+            localStorage.setItem("user_id", data.user_id);
+        } else {
+            console.warn("Usuário não logado ou sessão expirada.");
+        }
+      });
+</script>
+
   <script src="{{ url_for('static', filename='js/perfil_usuario.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"

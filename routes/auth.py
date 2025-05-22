@@ -1,4 +1,4 @@
-from flask import Blueprint, request, redirect, url_for, render_template,session
+from flask import Blueprint, request, redirect, url_for, render_template, session, jsonify
 from flask_login import login_user, logout_user, login_required
 from models.user import Usuario
 
@@ -25,3 +25,8 @@ def login():
 def logout():
   session.clear()  # Remove todos os dados da sessão
   return redirect(url_for('html_rotas.home'))  # Redireciona para a home
+
+@auth_bp.route('/user_id')
+def get_user_id():
+    user_id = session.get('user_id')
+    return jsonify({"user_id": user_id})

@@ -73,7 +73,7 @@ body{
 main{
     display: flex;
     flex-wrap: wrap;
-
+ 
     align-items: center;
     justify-content: space-between;
     background-color: white;
@@ -89,7 +89,8 @@ main{
 main div[id="logo"]{
     display: flex;
     justify-content: center;
-    align-items: center;   
+    align-items: center; 
+    margin: 0 0 0 50px;  
 }
 
 main div[id="nav"]{
@@ -105,8 +106,8 @@ main div[id="fantasma"]{
     height: 35px;
     border-radius: 20px;
     border: solid black 1px;
-    padding: 0 20px 0 5px;
-    margin: 5px 20px 5px 5px;
+    padding: 0 30px 0 5px;
+    margin: 5px 20px 5px 30px;
 }
 
 main input[id="campo-pesquisa"]{
@@ -283,17 +284,17 @@ img#back4 {
 .galeria {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
     margin-top: 20px;  /* Espaço entre o conteúdo acima */
     justify-content: space-between;
-    min-width: 370px;
+    min-width: 400px;
     width:95%;
     height: 255px;
 }
 
 
 .card {
-    width: 185px;
+    width: 195px;
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
@@ -325,8 +326,14 @@ img#back4 {
 .funcoes {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    flex-direction: column;
     margin-top: 0.5rem;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
 }
 
 .funcoes .material-icons {

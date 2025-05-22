@@ -70,10 +70,18 @@
             {% else %}
                 <p>Imagem não disponível</p>
             {% endif %}
-            <p>Disponível para troca</p>
             <div class="funcoes">
-                <span class="material-icons">favorite</span>
-                <span class="material-icons">chat</span>
+                <div>
+                   <p>{{item.condicao}}</p> 
+                </div>
+                <div class="flex">
+                   <p>{{item.categoria}}</p>
+                   <p>{{item.status}}</p> 
+                </div>
+                <div>
+                   <span class="material-icons">favorite</span>
+                   <span class="material-icons">chat</span> 
+                </div>  
             </div>
         </div>
     {% endfor %}

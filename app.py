@@ -25,7 +25,7 @@ def load_user(user_id):
     # Busque no banco o usuário pelo id e retorne o objeto Usuario
     conexao = conectar()
     cursor = conexao.cursor()
-    cursor.execute("SELECT idusuario, nome, email, senha, telefone, localizacao FROM usuario WHERE idusuario = %s", (user_id,))
+    cursor.execute("SELECT idusuario, nome, email, senha, telefone, localizacao, foto_perfil FROM usuario WHERE idusuario = %s", (user_id,))
     row = cursor.fetchone()
     cursor.close()
     conexao.close()

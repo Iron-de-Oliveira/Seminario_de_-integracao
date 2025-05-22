@@ -16,7 +16,7 @@ def home():
     conexao = conectar()
     cursor = conexao.cursor()
 
-    cursor.execute("SELECT foto FROM produtos")
+    cursor.execute("SELECT foto, categoria, condicao, status FROM produtos")
     resultados = cursor.fetchall()
 
     cursor.close()
@@ -26,6 +26,9 @@ def home():
 
     for row in resultados:
         foto_path = row["foto"]  
+        categoria = row["categoria"]
+        condicao = row["condicao"]
+        status = row["status"]
 
         if foto_path:
             caminho_completo = f"/static/{foto_path}"
@@ -34,7 +37,10 @@ def home():
 
         produtos.append({
             "foto": caminho_completo,
-        })    
+            "categoria": categoria,
+            "condicao": condicao,
+            "status": status,
+        })     
 
     # Renderizar o template passando as duas variáveis
     return render_template("home.html", usuario=usuario, resultado=produtos)
@@ -56,9 +62,7 @@ def perfil_user():
     usuario = Usuario.buscar_por_id(user_id)
     if not usuario:
         return "Usuário não encontrado", 404
-
     return render_template('perfil_usuario.html', usuario=usuario)
-    
 
 # rota para página de login
 @html_rotas.route("/login.html")
