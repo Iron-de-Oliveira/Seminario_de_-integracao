@@ -28,7 +28,7 @@ def novo_usuario():
                 if existente:
                     return jsonify({"message": "Email já cadastrado."}), 400
                 # id = gerar_id_unico(cursor) # variável recebe id aleatório
-                new_usuario = Usuario(idusuario = None, nome=data['nome'], email=data['email'], senha= data['senha'], telefone= data['telefone'], localizacao= data['localizacao'])
+                new_usuario = Usuario(idusuario = None, nome=data['nome'], email=data['email'], senha= data['senha'], telefone= data['telefone'], localizacao= data['localizacao'], foto_perfil= None)
                 sql = "INSERT INTO usuario (nome, email, senha, telefone, localizacao) VALUES (%s, %s, %s, %s, %s)"
                 cursor.execute(sql, (
                     new_usuario.nome,
@@ -131,7 +131,7 @@ def atualizar_usuario(idusuario):
                 cursor.execute("SELECT * FROM usuario WHERE idusuario = %s", (idusuario,))
                 existente = cursor.fetchone()
                 if not existente:
-                    return jsonify({"message": "Usuário não encontrado."}), 404
+                    return render_template("login_cadastro.html")
                 
                 # Monta a query dinamicamente para atualizar só os campos enviados
                 campos = []
@@ -154,3 +154,26 @@ def atualizar_usuario(idusuario):
         return jsonify({"message": "Erro ao atualizar usuário"}), 500
     
     return jsonify({"message": "Usuário atualizado com sucesso!"}), 200
+
+
+# rota para deletar conta do usuario
+@user_rotas.route("/usuario/<int:idusuario>", methods=['DELETE'])
+@cross_origin()
+def deletar(idusuario):
+    try:
+        conexao = conectar()
+        with conexao:
+            with conexao.cursor() as cursor:
+                sql = "DELETE FROM usuario WHERE idusuario = %s"
+                cursor.execute(sql, (idusuario,))
+            conexao.commit()
+
+        # Se nenhum registro foi afetado:
+        if cursor.rowcount == 0:
+            return jsonify({"message": "Usuario não encontrado"}), 404
+
+        return jsonify({"message": f"Conta com email {idusuario} foi deletado com sucesso"}), 200
+
+    except Exception as e:
+        print("Erro ao deletar:", e)
+        return jsonify({"message": "Erro ao deletar conta"}), 500

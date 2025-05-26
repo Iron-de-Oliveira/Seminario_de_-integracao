@@ -17,22 +17,31 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/exibicao_pdt.css') }}">
     <link rel="stylesheet" href="/static/css/cadastrar_item_doacao.css">
 </head>
-<body>
-
+<body class="open-sans">
     <nav>
-        <div onclick="retornar()">
-          <img src="/static/img/btn_left.png" id="retornar" >
-        </div>
-
         <div id="nav">
+            <div onclick="retornar()">
+                <img src="/static/img/btn_left.png" id="retornar" >
+            </div>
+
             <div id="fantasma">
                 <span class="material-icons distanica-pequisar" class="onsearch" >search</span>
                 <input type="text" id="campo-pesquisa" placeholder="Pesquisar..."> 
             </div>
+        </div>
+        <div class="btnnav" onclick="retornar()">
+            <span class="material-icons">home</span>
+            <div id="btn1" class="btn" >Home</div>
+        </div>
+        <div class="btnnav">
+            <span class="material-icons" onclick="chat()">chat</span>
+            <div id="btn2" class="btn"> Chat</div>
         </div>    
-        <div id="btn1" class="btn"> Home</div>
-        <div id="btn2" class="btn"> Chat</div>
-        <div id="btn3" class="btn"> Ajuda</div>
+       <div class="btnnav">
+            <span class="material-icons" onclick="ajuda()">help</span>
+            <div id="btn3" class="btn"> Ajuda</div>
+       </div>
+        
     </nav>
 
     <section>
@@ -42,26 +51,27 @@
             </div>
         </div>
         <div id="caixa2">
-            <p>categoria do produto</p>
-            <p>condicao do produto</p>
-            <p>disponivel para (troca/doação)</p>
-        </div>
-        <div id="caixa3">
-            <div id="descricao">
-                <p>descrição</p>
+            <div id="subcaixa1">
+                <p>categoria do produto</p>
+                <p>condicao do produto</p>
+                <p>disponivel para (troca/doação)</p>
             </div>
-            
-            <div>
-                <span class="material-icons">favorite</span>
-                <span class="material-icons">chat</span> 
+            <div id="subcaixa2">
+                <div id="descricao">
+                    <p>descrição</p>
+                </div>
+                
+                <div id="subcaixa3">
+                    <span class="material-icons">favorite</span>
+                    <span class="material-icons">share</span>
+                    <span class="material-icons">chat</span> 
+                    <button class="btn"> Tratar com anunciante</button>
+                </div>
+                
             </div>
-            
         </div>
+            
     </section>
-    
-    <div id="info">
-
-    </div>
 
     <script src="{{ url_for('static', filename='js/exibicao_pdt.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>

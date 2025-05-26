@@ -4,6 +4,10 @@
     box-sizing: 0;
 }
 
+.open-sans{
+    font-family: "Open sans", sans-serif;
+}
+
 body{
     display: flex;
     flex-direction: column;
@@ -20,16 +24,30 @@ nav{
     min-width: 412px;
     width: 95%;
     height: 100px;
-    margin: 0 0 10 0;
+    margin: 20 0 10 0;
 
-    background-color: greenyellow;
-
+    background:linear-gradient(#4dc07f, #51c878, #51c878,#4dc07f) no-repeat center center fixed;
+    box-shadow: 0px 2px 4px rgb(100, 100, 100);
 }
 
 div#nav{
     display: flex;
+    align-items: center;
+}
+
+.btnnav{
+    display: flex;
     justify-content: center;
     gap:9px;
+}
+
+.btnnav:hover{
+    cursor: pointer;
+}
+
+div#home{
+    display: flex;
+    align-items: center;
 }
 
 div#fantasma{
@@ -57,6 +75,9 @@ img#retornar{
     width: 45px;
     height: 45px;
 }
+img#retornar:hover{
+    cursor: pointer;
+}
 
 img#logo{
     height: 45px;
@@ -72,10 +93,12 @@ section{
 
     min-width: 412px;
     width: 95%;
-    height: 370px;
+    height: 400px;
     margin: 0 0 10 0;
 
-    background-color: rgb(47, 224, 255);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 2px 4px rgb(100, 100, 100);
+
 }
 
 div#caixa1{
@@ -86,40 +109,66 @@ div#caixa1{
     width: 37%;
     height: 350px;
 
-    background-color: antiquewhite;
+    background-color: rgb(255, 255, 255);
 }
 
 div#foto{
     width: 95%;
     height: 95%;
-    background-color: white;
+    background-color: rgb(168, 168, 168);
 }
 
 div#caixa2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-
-    min-width: 100px;
-    width: 29%;
-    height: 350px;
-
-    background-color: antiquewhite;
+    width: 53%;
 }
 
-div#caixa3{
+div#subcaixa1{
     display: flex;
-    justify-content: center;
+   justify-content: center;
     flex-direction: column;
+    gap: 10px;
+    font-size: 20px; ;
+
+    width: 100%;
+    height: 175px;
+
+    background-color: rgb(255, 255, 255);
+}
+
+div#subcaixa2{
+   display: flex;
+   justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px; ;
+
+    width:100%;
+    height: 175px;
+
+    background-color: rgb(255, 255, 255);
+}
+
+div#subcaixa3{
+    display: flex;
+    justify-content: space-around;
     align-items: center;
+}
 
-     min-width: 100px;
-     width:29%;
-     height: 350px;
-
-    background-color: antiquewhite;
+div#subcaixa3 button{
+    font-size: 20px;
+    width: 115px;
+    height: 45px;
+    border-radius: 12px;
+    border: solid 0;
+    box-shadow: 0px 2px 4px black;
+    background-color: rgb(35, 255, 189);
+    transition: ease-in 0.1s;
+}
+div#subcaixa3 button:hover{
+    transition: ease-in 0.1s;
+    cursor: pointer;
+    transform: scale(1.07);
+    box-shadow: 0px 2px 4px rgb(16, 58, 49);
 }
 
 div#descricao{
@@ -138,5 +187,13 @@ div#info{
     width: 95%;
     height: 150px;
 
-    background-color: rgb(106, 255, 87);
+    box-shadow: 0px 2px 4px rgb(100, 100, 100);
+    background:linear-gradient(#4dc07f, #51c878, #51c878,#4dc07f) no-repeat center center fixed
+}
+
+span:hover{
+    transition: ease-in 0.1s;
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: drop-shadow( 0px 0px 4px rgb(4, 255, 201));
 }

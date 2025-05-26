@@ -33,3 +33,22 @@ function foto_perfil() {
         alert("Erro ao atualizar a foto de perfil.");
     });
 }
+
+function deletar(idusuario) {
+    console.log("ID recebido para deletar:", idusuario); // 👈 veja o valor no console
+
+    if (confirm("Tem certeza que deseja deletar sua conta?")) {
+        fetch(`/usuario/${idusuario}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            window.location.reload();
+        })
+        .catch(error => {
+            console.error('Erro ao deletar conta:', error);
+            alert('Erro ao deletar conta.');
+        });
+    }
+}
