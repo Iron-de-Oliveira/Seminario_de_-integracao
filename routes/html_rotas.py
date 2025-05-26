@@ -73,3 +73,8 @@ def login():
 @html_rotas.route("/cadastrar_item_doacao.html")
 def casdastro_doacao():
         return render_template('cadastrar_item_doacao.html')   
+
+# exibição do produto escolhido
+@html_rotas.route("/exibicao_pdt.html")
+def exibir_pst():
+    return render_template("exibicao_pdt.html")
