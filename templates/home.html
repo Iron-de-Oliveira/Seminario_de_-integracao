@@ -64,6 +64,7 @@
 
     <div class="galeria">
     {% for item in resultado %}
+        <a href="{{ url_for('html_rotas.exibir_produto', idprodutos=item.idprodutos) }}">
         <div class="card">
             {% if item.foto %}
                 <img src="{{ item.foto }}" alt="Foto do produto">

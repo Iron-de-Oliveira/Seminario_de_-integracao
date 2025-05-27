@@ -44,13 +44,13 @@ def novo_produto():
         with conexao:
             with conexao.cursor() as cursor:
                 # 1) Criar a transação com produto_idproduto = None
-                tipo_transacao = 'Doacao'
-                usuario_idusuario = 1
+                tipo_transacao = 'troca'
+                usuario_idusuario = 6
                 avaliacao_id = None
                 data_transacao = date.today()
 
                 sql_transacao = """
-                    INSERT INTO transacoes (tipo_transacao, data_transacao, usuario_idusuario, produto_idproduto, avaliacao_idavaliacoes)
+                    INSERT INTO transacoes (tipo_transacao, data_transacao, usuario_idusuario, produto_idprodutos, avaliacao_idavaliacoes)
                     VALUES (%s, %s, %s, %s, %s)
                 """
                 cursor.execute(sql_transacao, (tipo_transacao, data_transacao, usuario_idusuario, None, avaliacao_id))
@@ -66,7 +66,7 @@ def novo_produto():
 
                 # 3) Atualizar a transação com o id do produto
                 sql_update = """
-                    UPDATE transacoes SET produto_idproduto = %s WHERE idtransacoes = %s
+                    UPDATE transacoes SET produto_idprodutos = %s WHERE idtransacoes = %s
                 """
                 cursor.execute(sql_update, (idprodutos, idtransacoes))
 

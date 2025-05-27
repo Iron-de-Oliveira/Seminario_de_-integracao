@@ -27,6 +27,7 @@ body {
   flex-direction: column;
   gap: 10px;
   margin: 0 0 5 0;
+  padding: 0 0 0 10px;
 }
 
 #salvar{
@@ -55,6 +56,20 @@ transition: ease-in 0.3s;
 
 #bts{
   margin: 0 0 120px 0;
+}
+
+#deletar{
+  font-size: 20px;
+  border-radius: 8px;
+  border: solid 0px;
+  box-shadow: 0px 1px 4px rgb(0, 0, 0);
+  background-color: white;
+}
+#deletar:hover{
+  cursor: pointer;
+  transition: ease-in 0.3s;
+  box-shadow: 0px 2px 5px rgb(255, 59, 59);
+  color: red;
 }
 
 .c1{
@@ -109,6 +124,9 @@ transition: ease-in 0.3s;
 }
 
 .dt{
+  display: flex;
+  justify-content: left;
+  align-items: center;
   padding: 0 0 0 10px;
   min-width: 250px;
   width: 95%;
@@ -135,14 +153,7 @@ transition: ease-in 0.3s;
   display: flex;
   align-items: center;
   gap: 15px;
-}
-
-.profile-pic {
-  width: 75px;
-  height: 75px;
-  background-color: white;
-  border-radius: 3px;
-  padding: 10px;
+  margin: 0 0 0 15;
 }
 
 .user-name {
@@ -202,4 +213,9 @@ transition: ease-in 0.3s;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   background: linear-gradient(to bottom, #027e02, #00b34d, #a5f3a3);
   padding: 3px;
+}
+
+#caixa{
+  display: flex;
+  gap: 10px;
 }

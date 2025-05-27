@@ -16,7 +16,7 @@ def home():
     conexao = conectar()
     cursor = conexao.cursor()
 
-    cursor.execute("SELECT foto, categoria, condicao, status FROM produtos")
+    cursor.execute("SELECT idprodutos, foto, categoria, condicao, status FROM produtos")
     resultados = cursor.fetchall()
 
     cursor.close()
@@ -25,6 +25,7 @@ def home():
     produtos = []
 
     for row in resultados:
+        idprodutos = row["idprodutos"]
         foto_path = row["foto"]  
         categoria = row["categoria"]
         condicao = row["condicao"]
@@ -36,12 +37,13 @@ def home():
             caminho_completo = ""
 
         produtos.append({
+            "idprodutos": idprodutos,
             "foto": caminho_completo,
             "categoria": categoria,
             "condicao": condicao,
             "status": status,
-        })     
-
+        })
+    
     # Renderizar o template passando as duas variáveis
     return render_template("home.html", usuario=usuario, resultado=produtos)
 
@@ -61,7 +63,7 @@ def perfil_user():
     
     usuario = Usuario.buscar_por_id(user_id)
     if not usuario:
-        return "Usuário não encontrado", 404
+        return render_template('login.html')
     return render_template('perfil_usuario.html', usuario=usuario)
 
 # rota para página de login
@@ -75,6 +77,35 @@ def casdastro_doacao():
         return render_template('cadastrar_item_doacao.html')   
 
 # exibição do produto escolhido
-@html_rotas.route("/exibicao_pdt.html")
-def exibir_pst():
-    return render_template("exibicao_pdt.html")
+@html_rotas.route("/produto/<int:idprodutos>")
+def exibir_produto(idprodutos):
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    try:
+        sql = """
+            SELECT idprodutos, foto, categoria, condicao, status, descricao 
+            FROM produtos 
+            WHERE idprodutos = %s
+        """
+        cursor.execute(sql, (idprodutos,))
+        produto = cursor.fetchone()
+
+        if not produto:
+            return "Produto não encontrado", 404
+
+        # Converte caminho da foto
+        if produto["foto"]:
+            produto["foto"] = f"/static/{produto['foto']}"
+
+        return render_template("exibicao_pdt.html", produto=produto)
+
+    except Exception as e:
+        print("Erro ao carregar produto:", e)
+        return "Erro no servidor", 500
+
+    finally:
+        cursor.close()
+        conexao.close()
+
+

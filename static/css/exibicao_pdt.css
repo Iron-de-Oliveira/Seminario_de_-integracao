@@ -113,9 +113,26 @@ div#caixa1{
 }
 
 div#foto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 95%;
     height: 95%;
-    background-color: rgb(168, 168, 168);
+    box-shadow: 0px 2px 5px rgb(73, 73, 73);
+    background: url(/static/img/backgraund/o-desfoque-de-luz-deixa-o-fundo-sombreado.jpg) ;
+    background-size: cover;
+}
+
+#pdt{
+    width: 80%;
+    height: 300px;
+}
+
+@media (max-width: 768px) {
+    #pdt{
+    width: 100%;
+    height: 175px;
+}
 }
 
 div#caixa2{
@@ -154,21 +171,28 @@ div#subcaixa3{
     align-items: center;
 }
 
-div#subcaixa3 button{
-    font-size: 20px;
-    width: 115px;
-    height: 45px;
-    border-radius: 12px;
-    border: solid 0;
-    box-shadow: 0px 2px 4px black;
-    background-color: rgb(35, 255, 189);
+div#button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
     transition: ease-in 0.1s;
 }
-div#subcaixa3 button:hover{
-    transition: ease-in 0.1s;
+.botao{
+ font-size: 20px;
+ background-color: #4dc07f;
+ border: solid 0px;
+ border-radius: 8px;
+ padding: 5px;
+ box-shadow: 0px 2px 4px rgb(107, 107, 107);
+}
+
+.botao:hover{
+    transition: ease-in 0.3s;
+    color:rgb(123, 255, 226) ;
     cursor: pointer;
-    transform: scale(1.07);
-    box-shadow: 0px 2px 4px rgb(16, 58, 49);
+    box-shadow: 0px 2px 4px rgb(123, 255, 226);
 }
 
 div#descricao{
@@ -196,4 +220,10 @@ span:hover{
     cursor: pointer;
     transform: scale(1.1);
     filter: drop-shadow( 0px 0px 4px rgb(4, 255, 201));
+}
+
+img#logo{
+    margin: 5 0 0 0;
+    width: 350px;
+    height: 100px;
 }

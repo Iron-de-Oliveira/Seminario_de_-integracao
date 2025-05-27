@@ -11,7 +11,7 @@ class Produtos:
    
     def to_dict(self):
         return{
-          "idproduto": self.idprodutos,
+          "idprodutos": self.idprodutos,
           "foto": self.foto,
           "descricao": self.descricao, 
           "categoria": self.categoria,

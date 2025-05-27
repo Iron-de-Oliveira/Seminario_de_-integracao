@@ -35,7 +35,7 @@ function foto_perfil() {
 }
 
 function deletar(idusuario) {
-    console.log("ID recebido para deletar:", idusuario); // 👈 veja o valor no console
+    console.log("ID recebido para deletar:", idusuario); // teste no console
 
     if (confirm("Tem certeza que deseja deletar sua conta?")) {
         fetch(`/usuario/${idusuario}`, {

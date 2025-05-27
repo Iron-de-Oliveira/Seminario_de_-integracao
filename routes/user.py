@@ -170,7 +170,7 @@ def deletar(idusuario):
 
         # Se nenhum registro foi afetado:
         if cursor.rowcount == 0:
-            return jsonify({"message": "Usuario não encontrado"}), 404
+            return render_template("login_cadastro.html")
 
         return jsonify({"message": f"Conta com email {idusuario} foi deletado com sucesso"}), 200
 
