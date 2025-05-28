@@ -48,7 +48,6 @@
           <div id="bts">
             <p class="user-name">{{usuario.nome}}<p>
             <p class="user-email">{{usuario.email}}</p>
-            <button id="deletar" onclick="deletar({{usuario.idusuario}})">Deletar conta</button>
           </div>
         </div>
       </div>
@@ -58,7 +57,7 @@
         <label>Nome:</label>
         <div class="dt2">
           <div class="dt">{{usuario.nome}}</div>
-          <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
+          <button  class="btn btn-primary" onclick="suporte()">Alterar</button>
         </div>
     </div>  
     <div class="input-card">
@@ -66,7 +65,7 @@
       <label>Email:</label>
       <div class="dt2">
           <div class="dt">{{usuario.email}}</div>
-          <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
+          <button  class="btn btn-primary" onclick="suporte()">Alterar</button>
         </div>
     </div>
 
@@ -75,7 +74,7 @@
       <label>Senha:</label>
       <div class="dt2">
           <div class="dt">{{usuario.senha}}</div>
-          <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
+          <button  class="btn btn-primary" onclick="suporte()">Alterar</button>
         </div>
     </div>
     
@@ -84,7 +83,7 @@
       <label>Telefone:</label>
       <div class="dt2">
           <div class="dt">{{usuario.telefone}}</div>
-          <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
+          <button  class="btn btn-primary" onclick="suporte()">Alterar</button>
         </div>
     </div>
 
@@ -93,7 +92,7 @@
       <label>Endereço:</label>
       <div class="dt2">
           <div class="dt">{{usuario.localizacao}}</div>
-          <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
+          <button  class="btn btn-primary" onclick="suporte()">Alterar</button>
         </div>
     </div>
 
@@ -102,11 +101,13 @@
       <label>Telefone:</label>
       <div class="dt2">
           <div class="dt">{{usuario.telefone}}</div>
-          <button  class="btn btn-primary" onclick="abrirFormularioEdicao()">Alterar</button>
+          <button  class="btn btn-primary" onclick="suporte()">Alterar</button>
         </div>
     </div>
     </div>
     
+    <button id="deletar" onclick="deletar({{usuario.idusuario}})">Deletar conta</button>
+
   </div>
   
 <script>

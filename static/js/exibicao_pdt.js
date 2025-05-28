@@ -16,3 +16,7 @@ function compartilharLink() {
     console.error("Erro ao copiar link: ", err);
   });
 }
+
+function suporte(){
+    window.location.href = "/suporte.html"
+}

@@ -9,7 +9,6 @@ from flask_cors import CORS
 from database.cenexao import conectar
 
 
-
 app = Flask (__name__)
 app.secret_key = "uma_chave_super_secreta_e_complexa_aqui_123!"
 
@@ -18,7 +17,6 @@ CORS(app)
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
 login_manager.init_app(app)
-
 
 @login_manager.user_loader
 def load_user(user_id):

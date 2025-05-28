@@ -27,6 +27,9 @@
     margin-top: 5px;
 
 }
+.distanica-pequisar:hover{
+    cursor: pointer;
+}
 
 /* cores letras class */
 .cor1{

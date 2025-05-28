@@ -25,8 +25,8 @@
             </div>
 
             <div id="fantasma">
-                <span class="material-icons distanica-pequisar" class="onsearch" >search</span>
-                <input type="text" id="campo-pesquisa" placeholder="Pesquisar..."> 
+                <span class="material-icons distanica-pequisar" class="onsearch" onclick="suporte()"s>search</span>
+                <input type="text" id="campo-pesquisa" placeholder="Pesquisar..." > 
             </div>
         </div>
         <div class="btnnav" onclick="retornar()">
@@ -34,12 +34,12 @@
             <div id="btn1" class="btn" >Home</div>
         </div>
         <div class="btnnav">
-            <span class="material-icons" onclick="chat()">chat</span>
-            <div id="btn2" class="btn"> Chat</div>
+            <span class="material-icons" onclick="suporte()">chat</span>
+            <div id="btn2" class="btn" onclick="suporte()"> Chat</div>
         </div>    
        <div class="btnnav">
-            <span class="material-icons" onclick="ajuda()">help</span>
-            <div id="btn3" class="btn"> Ajuda</div>
+            <span class="material-icons" onclick="suporte()">help</span>
+            <div id="btn3" class="btn" onclick="suporte()"> Ajuda</div>
        </div>
         
     </nav>
@@ -67,11 +67,11 @@
                 </div>
                                 
                 <div id="subcaixa3">
-                    <span class="material-icons">favorite</span>
+                    <span class="material-icons" onclick="suporte()">favorite</span>
                     <span class="material-icons" onclick="compartilharLink()">share</span>
                     <div id="button">
-                        <span class="material-icons">chat</span> 
-                        <button class="botao"> Tratar com anunciante</button>   
+                        <span class="material-icons" onclick="suporte()">chat</span> 
+                        <button class="botao" onclick="suporte()"> Tratar com anunciante</button>   
                     </div>
                 </div>
                 

@@ -52,3 +52,8 @@ function deletar(idusuario) {
         });
     }
 }
+
+
+function suporte(){
+    window.location.href = "/suporte.html"
+}

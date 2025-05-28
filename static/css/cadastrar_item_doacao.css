@@ -14,15 +14,13 @@
 }
 
 body{
-    display: flex;
-    align-items: center;
     background: url(/static/img/back2.jpg);
     background-size: 1400px, 1024px;
 }
 
 div[id="caixa_pai"]{
      display: flex;
-     justify-content: space-between;
+     justify-content: space-around;
      min-width: 400px;
      width: 100%;
      overflow: hidden;
@@ -40,7 +38,6 @@ div[id="caixa_pai"]{
 
     border-radius: 12px;
     box-shadow: 0px 1px 4px black;
-    margin: 0 0 0 40;
     padding: 0 0 10 0;
 }
 
@@ -134,41 +131,6 @@ textarea{
 
 
 /* estilização dos botões */
-input[id="pass_left"]{
-    height: 48px;
-    width: 48px;
-    background-image: url("/static/img/btn_left.png");
-    background-size: 100%;
-    border: solid 0;
-    box-shadow: 0px 0px 5px black;
-    transition: ease-in 0.3s;
-}
-
-input[id="pass_left"]:hover{
-    transition: ease-in 0.3s;
-    cursor: pointer;
-    box-shadow: 0px 3px 5px black;
-    border-radius: 8px
-
-}
-
-input[id="pass_right"]{
-    height: 48px;
-    width: 48px;
-    background-image: url("/static/img/btn_right.png");
-    background-size: 100%;
-    border: solid 0;
-    box-shadow: 0px 0px 5px black;
-    transition: ease-in 0.3s;
-}
-
-input[id="pass_right"]:hover{
-    transition: ease-in 0.3s;
-    cursor: pointer;
-    box-shadow: 0px 3px 5px black;
-    border-radius: 8px
-
-}
 
 div[id="botoes"]{
     display: flex;
@@ -210,7 +172,7 @@ input[id="botao_clr"]:hover{
 }
 
 /* img */
-img{
+img#segundafoto{
     height: 680px;
     width: 800px;
     margin: 0 0 0 0;
@@ -220,7 +182,32 @@ img{
 
 img#segundafoto{
     display: none;
-}    
+}  
+
+div[id="caixa_pai"]{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-width: 400px;
+     width: 100%;
+     overflow: hidden;
+}
+
+#display{
+    width: 412px;
+    min-height: 600px;
+    background: linear-gradient(#4dc07f, #51c878, #51c878,#4dc07f);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    border-radius: 12px;
+    box-shadow: 0px 1px 4px black;
+    padding: 0 0 10 0;
+}
+
 
 
 }

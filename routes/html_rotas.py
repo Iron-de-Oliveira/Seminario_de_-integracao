@@ -4,7 +4,6 @@ from database.cenexao import conectar
 
 html_rotas = Blueprint('html_rotas', __name__)
 
-
 # rota da página principal
 @html_rotas.route("/")
 def home():
@@ -46,8 +45,6 @@ def home():
     
     # Renderizar o template passando as duas variáveis
     return render_template("home.html", usuario=usuario, resultado=produtos)
-
-    
 
 # rota para págna cadastro
 @html_rotas.route("/cadastro.html")
@@ -108,4 +105,7 @@ def exibir_produto(idprodutos):
         cursor.close()
         conexao.close()
 
-
+# suporte
+@html_rotas.route("/suporte.html")
+def suporte():
+    return render_template('suporte.html')

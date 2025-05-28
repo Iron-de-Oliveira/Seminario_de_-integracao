@@ -20,3 +20,6 @@ function caminho_cadastro() {
     window.location.href = "cadastro.html"; 
 }
 
+function suporte(){
+    window.location.href = "/suporte.html"
+}
